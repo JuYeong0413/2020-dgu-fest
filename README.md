@@ -5,13 +5,17 @@
 
 ## 개발환경  
 - Python 3.7.3  
-- Django 3.0.6
+- Django 3.0.6  
 
 ## 배포환경  
 
 
 ## 개발자  
+
+### 멘토  
 - [이주영](https://github.com/JuYeong0413)  
+- [박현준](https://github.com/c2lv)  
+- [연제훈](https://github.com/YJHoon)  
 
 ## 지원  
 동국대학교 제50대 총학생회 하이라이트  
