@@ -15,6 +15,7 @@
 ### 멘토  
 - [이주영](https://github.com/JuYeong0413)  
 - [박현준](https://github.com/c2lv)  
+- [양준혁](https://github.com/surfing2003)  
 - [연제훈](https://github.com/YJHoon)  
 
 ## 지원  
