@@ -12,21 +12,10 @@
 
 ## 개발자  
 ### 8기  
-- 강동희  
-- 김태연  
-- 이소정  
-- 이예은  
-- 이형석  
-- 임도연  
-- 주현이  
-- 최현지  
+강동희, 김태연, 이소정, 이예은, 이형석, 임도연, 주현이, 최현지  
 
 ### 멘토  
-- [이주영](https://github.com/JuYeong0413)  
-- [김연진](https://github.com/ygk313)  
-- [박현준](https://github.com/c2lv)  
-- [양준혁](https://github.com/surfing2003)  
-- [연제훈](https://github.com/YJHoon)  
+[김연진](https://github.com/ygk313), [박현준](https://github.com/c2lv), [양준혁](https://github.com/surfing2003), [연제훈](https://github.com/YJHoon), [이주영](https://github.com/JuYeong0413) 
 
 ## 지원  
 - 동국대학교 융합소프트웨어교육원  
