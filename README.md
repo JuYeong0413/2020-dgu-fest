@@ -12,7 +12,7 @@
 
 ## 개발자  
 ### 8기  
-강동희, 김태연, 이소정, 이예은, 이형석, 임도연, 주현이, 최현지  
+[강동희](https://github.com/dhk010111), [김태연](https://github.com/taeyeon0319), [이소정](https://github.com/SJLEE316), [이예은](https://github.com/lee00096), [이형석](https://github.com/lhs961021), [임도연](https://github.com/dddooo9), [주현이](https://github.com/hyeoneedyou), [최현지](https://github.com/hyeonjee)  
 
 ### 멘토  
 [김연진](https://github.com/ygk313), [박현준](https://github.com/c2lv), [양준혁](https://github.com/surfing2003), [연제훈](https://github.com/YJHoon), [이주영](https://github.com/JuYeong0413) 
