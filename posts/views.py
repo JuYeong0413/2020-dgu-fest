@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def main(request):
-    return render(request, 'posts/main.html')
+def gallery(request):
+    return render(request, 'posts/gallery.html')
+
+
 

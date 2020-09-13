@@ -3,5 +3,5 @@ from .views import *
 
 app_name="posts"
 urlpatterns = [
-    path('main/', main, name="main"),
+    path('gallery/', gallery, name="gallery"),
 ]

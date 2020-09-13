@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +12,10 @@
     <title>Alime - Photography HTML Template</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="{% static 'img/core-img/favicon.png' %}">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
@@ -54,7 +55,7 @@
                     <nav class="classy-navbar justify-content-between" id="alimeNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="#"><img src="{% static 'img/core-img/logo.png'%}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -70,15 +71,15 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul id="nav">
-                                    <li><a href="./index.html">Home</a></li>
+                                    <li><a href="#">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./index.html">- Home</a></li>
-                                            <li><a href="./about.html">- About</a></li>
-                                            <li><a href="./gallery.html">- Gallery</a></li>
-                                            <li><a href="./blog.html">- Blog</a></li>
-                                            <li><a href="./single-blog.html">- Blog Details</a></li>
-                                            <li><a href="./contact.html">- Contact</a></li>
+                                            <li><a href="#">- Home</a></li>
+                                            <li><a href="#">- About</a></li>
+                                            <li><a href="./">- Gallery</a></li>
+                                            <li><a href="#">- Blog</a></li>
+                                            <li><a href="#">- Blog Details</a></li>
+                                            <li><a href="#">- Contact</a></li>
                                             <li><a href="#">- Dropdown</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">- Dropdown Item</a></li>
@@ -89,10 +90,10 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="./about.html">About</a></li>
-                                    <li class="active"><a href="./gallery.html">Gallery</a></li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li class="active"><a href="./">Gallery</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
 
                                 <!-- Search Icon -->
@@ -108,7 +109,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/38.jpg);">
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static 'img/bg-img/38.jpg' %}');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -116,7 +117,7 @@
                         <h2 class="page-title">Gallery</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="#"><i class="icon_house_alt"></i> Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                             </ol>
                         </nav>
@@ -149,9 +150,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/39.jpg" alt="">
+                        <img src="{% static 'img/bg-img/39.jpg'%}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/39.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/39.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -159,9 +160,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/40.jpg" alt="">
+                        <img src="{% static 'img/bg-img/40.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/40.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/40.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -169,9 +170,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/41.jpg" alt="">
+                        <img src="{% static 'img/bg-img/41.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/41.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/41.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -179,9 +180,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/42.jpg" alt="">
+                        <img src="{% static 'img/bg-img/42.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/42.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/42.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -189,9 +190,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/43.jpg" alt="">
+                        <img src="{% static 'img/bg-img/43.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/43.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/43.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -199,9 +200,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/44.jpg" alt="">
+                        <img src="{% static 'img/bg-img/44.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/44.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/44.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -209,9 +210,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/45.jpg" alt="">
+                        <img src="{% static 'img/bg-img/45.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/45.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/45.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -219,9 +220,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/46.jpg" alt="">
+                        <img src="{% static 'img/bg-img/46.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/46.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/46.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -229,9 +230,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/47.jpg" alt="">
+                        <img src="{% static 'img/bg-img/47.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/47.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/47.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -239,9 +240,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/48.jpg" alt="">
+                        <img src="{% static 'img/bg-img/48.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/48.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/48.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -249,9 +250,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/49.jpg" alt="">
+                        <img src="{% static 'img/bg-img/49.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/49.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/49.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -259,9 +260,9 @@
                 <!-- Single Gallery Item -->
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="img/bg-img/50.jpg" alt="">
+                        <img src="{% static 'img/bg-img/50.jpg' %}" alt="">
                         <div class="hover-content">
-                            <a href="img/bg-img/50.jpg" class="portfolio-img">+</a>
+                            <a href="{% static 'img/bg-img/50.jpg' %}" class="portfolio-img">+</a>
                         </div>
                     </div>
                 </div>
@@ -293,7 +294,7 @@
         <div class="instragram-feed-area owl-carousel">
             <!-- Single Instagram Item -->
             <div class="single-instagram-item">
-                <img src="img/bg-img/11.jpg" alt="">
+                <img src="{% static 'img/bg-img/11.jpg' %}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
@@ -303,7 +304,7 @@
             </div>
             <!-- Single Instagram Item -->
             <div class="single-instagram-item">
-                <img src="img/bg-img/12.jpg" alt="">
+                <img src="{% static 'img/bg-img/12.jpg' %}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
@@ -313,7 +314,7 @@
             </div>
             <!-- Single Instagram Item -->
             <div class="single-instagram-item">
-                <img src="img/bg-img/13.jpg" alt="">
+                <img src="{% static 'img/bg-img/13.jpg' %}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
@@ -323,7 +324,7 @@
             </div>
             <!-- Single Instagram Item -->
             <div class="single-instagram-item">
-                <img src="img/bg-img/14.jpg" alt="">
+                <img src="{% static 'img/bg-img/14.jpg' %}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
@@ -333,17 +334,17 @@
             </div>
             <!-- Single Instagram Item -->
             <div class="single-instagram-item">
-                <img src="img/bg-img/15.jpg" alt="">
+                <img src="{% static 'img/bg-img/15.jpg'%}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
                         <span>Alime_photographer</span>
                     </a>
                 </div>
-            </div>
-            <!-- Single Instagram Item -->
+            </div> 
+            <!-- Single Instagram Item --> 
             <div class="single-instagram-item">
-                <img src="img/bg-img/16.jpg" alt="">
+                <img src="{% static 'img/bg-img/16.jpg'%}" alt="">
                 <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
                     <a href="#">
                         <i class="ti-instagram" aria-hidden="true"></i>
@@ -353,7 +354,7 @@
             </div>
         </div>
     </div>
-    <!-- Follow Area End -->
+    Follow Area End
 
     <!-- Footer Area Start -->
     <footer class="footer-area">
@@ -364,12 +365,12 @@
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                         <!-- Footer Logo -->
                         <div class="footer-logo">
-                            <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="#"><img src="{% static 'img/core-img/logo2.png' %}" alt=""></a>
                         </div>
                         <!-- Social Info -->
                         <div class="social-info">
@@ -387,15 +388,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- **** All JS Files ***** -->
     <!-- jQuery 2.2.4 -->
-    <script src="js/jquery.min.js"></script>
+    <script src="{% static '/js/jquery.min.js' %}"></script>
     <!-- Popper -->
-    <script src="js/popper.min.js"></script>
+    <script src="{% static '/js/popper.min.js' %}"></script>
     <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
     <!-- All Plugins -->
-    <script src="js/alime.bundle.js"></script>
+    <script src="{% static '/js/alime.bundle.js' %}"></script>
     <!-- Active -->
-    <script src="js/default-assets/active.js"></script>
+    <script src="{% static '/js/default-assets/active.js' %}"></script>
 
 </body>
 
