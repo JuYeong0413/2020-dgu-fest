@@ -5,5 +5,7 @@ from django.shortcuts import render
 def gallery(request):
     return render(request, 'posts/gallery.html')
 
+def new(request):
+    return render(request, 'posts/new.html')
 
 

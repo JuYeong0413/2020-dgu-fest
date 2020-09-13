@@ -109,7 +109,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static 'img/bg-img/38.jpg'%}');">
+    <section class="breadcrumb-area bg-img bg-overlay jarallax">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -142,6 +142,9 @@
                             <button class="btn" data-filter=".country">Country</button>
                             <button class="btn" data-filter=".video">Video</button>
                         </div>
+                        <button class="btn">
+                            <a href="{% url 'posts:new' %}">업로드</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -151,6 +154,7 @@
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="{% static 'img/bg-img/39.jpg' %}" alt="">
+                        <p style="padding-top: 20px; word-break: break-all;">ddddddddfsdlkfnsdlfnlkdsnflkdsjflkjdslkfjsdljflkdsjflkjdslfkjsdlkfjlsdkjflsdkjfljsdlfkjlsdkjflkdsjfl</p>
                         <div class="hover-content">
                             <a href="{% static 'img/bg-img/39.jpg' %}" class="portfolio-img">+</a>
                         </div>
