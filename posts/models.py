@@ -7,7 +7,7 @@ class Post(models.Model):
         ('performance', 'performance'),
         ('etc', 'etc'),
     ]
-    category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300, null=True)
+    category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300)
     title = models.CharField(max_length=50, null=False)
     content = models.CharField(max_length=100, null=False)
     image = models.ImageField(upload_to='images/', null=True)
