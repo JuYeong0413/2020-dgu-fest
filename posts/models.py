@@ -2,10 +2,10 @@ from django.db import models
 
 class Post(models.Model):
     POST_CATEGORY_CHOICES = [
-        ('주점', '주점'),
-        ('부스', '부스'),
-        ('공연', '공연'),
-        ('기타', '기타'),
+        ('pub', 'pub'),
+        ('booth', 'booth'),
+        ('performance', 'performance'),
+        ('etc', 'etc'),
     ]
     category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300, null=True)
     title = models.CharField(max_length=50, null=False)
