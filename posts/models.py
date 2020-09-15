@@ -8,9 +8,8 @@ class Post(models.Model):
         ('etc', 'etc'),
     ]
     category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300)
-    title = models.CharField(max_length=50, null=False)
-    content = models.TextField()
-    image = models.ImageField(upload_to='images/', null=True)
-    video = models.FileField(upload_to='videos/', null=True)
+    title = models.CharField(max_length=50)
+    content = models.TextField(null=True)
+    work = models.FileField(upload_to='works/')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
