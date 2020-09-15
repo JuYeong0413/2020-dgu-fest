@@ -9,7 +9,7 @@ class Post(models.Model):
     ]
     category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300)
     title = models.CharField(max_length=50)
-    content = models.TextField(null=True)
-    work = models.FileField(upload_to='works/')
+    content = models.TextField(blank=True)
+    mediafile = models.FileField(upload_to='mediafiles/')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
