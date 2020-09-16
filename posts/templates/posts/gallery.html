@@ -151,74 +151,8 @@
 
             <div class="row alime-portfolio">
                 <!-- Single Gallery Item -->
-                {% for post in posts %}
-                    {% if post.category == "pub" %}
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 pub wow fadeInUp" data-wow-delay="100ms">
-                        <div class="single-portfolio-content">
-                            {% if post.mediafile %}
-                            <img src ="{{post.mediafile.url}}" alt="">
-                            <div class="hover-content">
-                                <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-                            </div>
-                            {% endif %}
-                            {% if post.title %}
-                            <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-                {% for post in posts %}
-                    {% if post.category == "booth" %}
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 booth wow fadeInUp" data-wow-delay="100ms">
-                        <div class="single-portfolio-content">
-                            {% if post.mediafile %}
-                            <img src ="{{post.mediafile.url}}" alt="">
-                            <div class="hover-content">
-                                <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-                            </div>
-                            {% endif %}
-                            {% if post.title %}
-                            <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-                {% for post in posts %}
-                    {% if post.category == "performance" %}
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 performance wow fadeInUp" data-wow-delay="100ms">
-                        <div class="single-portfolio-content">
-                            {% if post.mediafile %}
-                            <img src ="{{post.mediafile.url}}" alt="">
-                            <div class="hover-content">
-                                <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-                            </div>
-                            {% endif %}
-                            {% if post.title %}
-                            <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-                {% for post in posts %}
-                    {% if post.category == "etc" %}
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 etc wow fadeInUp" data-wow-delay="100ms">
-                        <div class="single-portfolio-content">
-                            {% if post.mediafile %}
-                            <img src ="{{post.mediafile.url}}" alt="">
-                            <div class="hover-content">
-                                <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-                            </div>
-                            {% endif %}
-                            {% if post.title %}
-                            <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
+                {% include 'shared/gallery_item.html' %}
+            </div>
         </div>
         <div class="row">
             <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">
