@@ -151,130 +151,24 @@
 
             <div class="row alime-portfolio">
                 <!-- Single Gallery Item -->
+                {% for post in posts %}
                 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         {% if post.mediafile %}
-                        <img src="{{post.mediafile.url}}" alt="">
+                        <img src ="{{post.mediafile.url}}" alt="">
+                        <div class="hover-content">
+                            <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
+                        </div>
                         {% endif %}
                         {% if post.title %}
                         <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
                         {% endif %}
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/39.jpg' %}" class="portfolio-img">+</a>
-                        </div>
+                        
                     </div>
                 </div>
+                {% endfor %}
 
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/40.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/40.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/41.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/41.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/42.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/42.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/43.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/43.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/44.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/44.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/45.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/45.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/46.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/46.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/47.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/47.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/48.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/48.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/49.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/49.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Gallery Item -->
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="{% static 'img/bg-img/50.jpg' %}" alt="">
-                        <div class="hover-content">
-                            <a href="{% static 'img/bg-img/50.jpg' %}" class="portfolio-img">+</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
 
             <div class="row">
                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="800ms">

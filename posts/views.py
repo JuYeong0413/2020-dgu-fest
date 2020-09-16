@@ -4,7 +4,8 @@ from .models import *
 # Create your views here.
 
 def gallery(request):
-    return render(request, 'posts/gallery.html')
+    posts=Post.objects.all()
+    return render(request, 'posts/gallery.html', {'posts':posts})
 
 def new(request):
     return render(request, 'posts/new.html')
