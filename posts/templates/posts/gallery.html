@@ -151,7 +151,10 @@
 
             <div class="row alime-portfolio">
                 <!-- Single Gallery Item -->
-                {% include 'shared/gallery_item.html' %}
+                {% include 'shared/gallery_item.html' with category_value="pub" %}
+                {% include 'shared/gallery_item.html' with category_value="booth" %}
+                {% include 'shared/gallery_item.html' with category_value="performance" %}
+                {% include 'shared/gallery_item.html' with category_value="etc" %}
             </div>
         </div>
         <div class="row">
