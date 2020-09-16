@@ -133,15 +133,25 @@
 
                         <!-- Form -->
                         <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <input class="form-control mb-30" placeholder="카테고리 선택하는 부분">
+                            <div class="container">
+                                <div class="form-group">
+                                    <label>카테고리</label>
+                                    <select name="category" id="category">
+                                        <option value="pub">주점</option>
+                                        <option value="booth">부스</option>
+                                        <option value="performance">공연</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                </div>
+                            </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력">
                                 </div>
                                 <div class="col-12">
-                                    <input class="form-control mb-30" style="height: 500px; width: 500px;" placeholder="사진/영상 추가하는 부분">
+                                    <textarea class="form-control mb-30" name="content" placeholder="내용 입력"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="text" maxlength="100" class="form-control mb-30" placeholder="내용 입력"></textarea>
+                                    <input type="file" name="mediafile" accept="image/*, video/*">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
