@@ -132,7 +132,8 @@
                         <h4 class="mb-30">사진/영상 업로드</h4>
 
                         <!-- Form -->
-                        <form action="#" method="post">
+                        <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="container">
                                 <div class="form-group">
                                     <label>카테고리</label>
