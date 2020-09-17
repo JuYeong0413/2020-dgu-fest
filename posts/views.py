@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-
+import magic 
 # Create your views here.
 
 def gallery(request):
@@ -16,6 +16,7 @@ def create(request):
         title = request.POST.get('title')
         content = request.POST.get('content')
         mediafile = request.FILES.get('mediafile')
-        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile)
+        media_type = magic.from_buffer(mediafile.read(1024), mime=True)
+        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, media_type=media_type)
     return redirect('posts:gallery')
 

@@ -13,3 +13,4 @@ class Post(models.Model):
     mediafile = models.FileField(upload_to='mediafiles/')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+    media_type = models.CharField(max_length=50)
