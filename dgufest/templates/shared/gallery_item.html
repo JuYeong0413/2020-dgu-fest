@@ -2,21 +2,18 @@
     {% if post.category == category_value %}
         <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 {{category_value}} wow fadeInUp" data-wow-delay="100ms">
             <div class="single-portfolio-content">
-                {% if post.mediafile %}
-                    {% if "video" in post.mediafile.content_type %}
-                        <video class="col-12">
-                            <source src="{{post.mediafile.url}}" alt="video">
-                        </video>
-                        <div class="hover-content">
-                            <a href="{{post.mediafile.url}}" class=".video-play-btn">+</a>
-                        </div>
-                    {% else %}
-                        <img src ="{{post.mediafile.url}}" alt="">
-                        <div class="hover-content">
-                            <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-                        </div>
-                    {% endif %}
-                    
+                {% if post.mediatype == "video" %}
+                    <video class="col-12" controls>
+                        <source src="{{post.mediafile.url}}" alt="video">
+                    </video>
+                    <div class="hover-content">
+                        <a href="{{post.mediafile.url}}" class=".video-play-btn">+</a>
+                    </div>
+                {% else %}
+                    <img src ="{{post.mediafile.url}}" alt="">
+                    <div class="hover-content">
+                        <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
+                    </div>
                 {% endif %}
 
                 {% if post.title %}
