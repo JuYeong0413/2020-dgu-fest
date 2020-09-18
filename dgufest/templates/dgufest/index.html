@@ -17,6 +17,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/cc0d007bbf.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -72,12 +73,12 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul id="nav">
-                                    <li class="active"><a href="./index.html">Home</a></li>
+                                    <li class="active"><a href="./">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./index.html">- Home</a></li>
+                                            <li><a href="./">- Home</a></li>
                                             <li><a href="./about.html">- About</a></li>
-                                            <li><a href="./gallery.html">- Gallery</a></li>
+                                            <li><a href="{% url 'posts:gallery' %}">- Gallery</a></li>
                                             <li><a href="./blog.html">- Blog</a></li>
                                             <li><a href="./single-blog.html">- Blog Details</a></li>
                                             <li><a href="./contact.html">- Contact</a></li>
@@ -92,7 +93,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="./about.html">About</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href=".{% url 'posts:gallery' %}">Gallery</a></li>
                                     <li><a href="./blog.html">Blog</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
                                 </ul>
@@ -312,43 +313,17 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2>Follow Instagram</h2>
+                        <h2>Follow DGU Lion</h2>
                         <p>@likelion_dongguk</p>
+                        <a href="https://www.instagram.com/likelion_dongguk/?hl=ko">
+                            <i class="fab fa-instagram-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://ko-kr.facebook.com/DGUlion/">
+                            <i class="ti-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://pf.kakao.com/_jxbIxfd">
+                            <i class="fas fa-comment"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Instagram Feed Area -->
-        <div class="instragram-feed-area owl-carousel items-3 ">
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/core-img/dgulion.png' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/likelion_dongguk/?hl=ko">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>동국대학교 멋쟁이사자처럼 인스타그램</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/core-img/dgulion.png' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://ko-kr.facebook.com/DGUlion/">
-                        <i class="ti-facebook" aria-hidden="true"></i>
-                        <span>동국대학교 멋쟁이사자처럼 페이스북</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/core-img/dgulion.png' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://pf.kakao.com/_jxbIxfd">
-                        <i class="ti-" aria-hidden="true"></i>
-                        <span>동국대학교 멋쟁이사자처럼 카카오톡</span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -367,17 +342,8 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
-                        <!-- Footer Logo -->
-                        <div class="footer-logo">
-                            <a href="#"><img src="{% static 'img/core-img/logo2.png' %}" alt=""></a>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="social-info">
-                            <a href="#"><i class="ti-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-linkedin" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-pinterest" aria-hidden="true"></i></a>
-                        </div>
+                        <a href="#" class=" pull-right">이용약관 </a>
+                        <a href="#" class=" pull-right"> 개인정보처리방침</a>
                     </div>
                 </div>
             </div>
