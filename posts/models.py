@@ -8,13 +8,8 @@ class Post(models.Model):
         ('etc', 'etc'),
     ]
 
-    POST_MEDIATYPE_CHOICES = [
-        ('image', 'image'),
-        ('video', 'video'),
-    ]
-
     category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300)
-    mediatype = models.CharField(choices=POST_MEDIATYPE_CHOICES, max_length=300)
+    mediatype = models.CharField(max_length=300)
     title = models.CharField(max_length=50)
     content = models.TextField(blank=True)
     mediafile = models.FileField(upload_to='mediafiles/')
