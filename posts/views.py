@@ -16,6 +16,7 @@ def create(request):
         title = request.POST.get('title')
         content = request.POST.get('content')
         mediafile = request.FILES.get('mediafile')
-        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile)
+        mediatype = mediafile.content_type
+        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype)
     return redirect('posts:gallery')
 
