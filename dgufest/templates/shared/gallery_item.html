@@ -20,6 +20,7 @@
                     <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
                 {% endif %}
             </div>
+            <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
         </div>
     {% endif %}
 {% endfor %}
