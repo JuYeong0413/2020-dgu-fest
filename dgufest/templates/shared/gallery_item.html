@@ -21,6 +21,7 @@
                 {% endif %}
             </div>
             <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
+            <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a>
         </div>
     {% endif %}
 {% endfor %}

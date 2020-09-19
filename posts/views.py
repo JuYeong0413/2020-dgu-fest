@@ -30,3 +30,8 @@ def update(request, post_id):
         post.save()
         return redirect('posts:gallery')
     return render(request,'posts/update.html',{'post':post})
+
+def delete(request, post_id): 
+	post = get_object_or_404(Post, pk=post_id) 
+	post.delete()
+	return redirect("posts:gallery")    
