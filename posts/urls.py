@@ -6,4 +6,5 @@ urlpatterns = [
     path('gallery/', gallery, name="gallery"),
     path('new/', new, name="new"),
     path('create/', create, name="create"),
+    path('update/<int:id>/', update, name="update"),
 ]

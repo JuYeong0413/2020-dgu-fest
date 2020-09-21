@@ -20,6 +20,9 @@
                     <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
                 {% endif %}
             </div>
+            <div class="col-12 text-left wow fadeInUp" data-wow-delay="800ms">
+                <a href="{% url 'posts:update' post.pk %}" class="btn alime-btn btn-2 mt-15">Edit</a>
+            </div>
         </div>
     {% endif %}
 {% endfor %}

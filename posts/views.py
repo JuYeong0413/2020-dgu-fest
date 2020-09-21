@@ -20,3 +20,17 @@ def create(request):
         Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype)
     return redirect('posts:gallery')
 
+
+def update(request, id):
+    post = Post.objects.get(pk=id)
+    if request.method == "POST":
+        post.title = request.POST.get("title")
+        post.content = request.POST.get("content")
+        post.mediafile = request.FILES.get("mediafile")
+        post.save()
+        return redirect('posts:gallery')
+    return render(request, 'posts/update.html', {"post":post})
+
+
+
+
