@@ -144,6 +144,7 @@
                                         <option value="etc">기타</option>
                                     </select>
                                 </div>
+                        
                             </div>
                                 <div class="col-12">
                                     <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required>
@@ -152,7 +153,7 @@
                                     <textarea class="form-control mb-30" name="content" placeholder="내용 입력"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <input type="file" name="mediafile" accept="image/*, video/*" required>
+                                    <input type="file" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
@@ -287,6 +288,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static 'js/alime.bundle.js'%}"></script>
     <!-- Active -->
     <script src="{% static 'js/default-assets/active.js'%}"></script>
+
+    <script src="{% static 'js/filesizelimit.js' %}"></script>
+
 
 </body>
 
