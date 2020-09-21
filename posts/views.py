@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from django.http import request
 
 # Create your views here.
 
@@ -21,15 +22,17 @@ def create(request):
     return redirect('posts:gallery')
 
 
+
 def update(request, id):
-    post = Post.objects.get(pk=id)
+    post = get_object_or_404(Post,pk=id)
     if request.method == "POST":
-        post.title = request.POST.get("title")
-        post.content = request.POST.get("content")
-        post.mediafile = request.FILES.get("mediafile")
+        post.category = request.POST['category']
+        post.title = request.POST['title']
+        post.content = request.POST['content']
+        post.mediafile = request.FILES.get('mediafile')
         post.save()
         return redirect('posts:gallery')
-    return render(request, 'posts/update.html', {"post":post})
+    return render(request,'posts/update.html',{'post':post})
 
 
 

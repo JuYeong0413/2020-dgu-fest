@@ -14,7 +14,3 @@ function limitSize(input) {
 
 }
 
-
-// $('input[type=file]').change(function () {
-//     console.dir(this.files[0])
-// })
