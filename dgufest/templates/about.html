@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/38.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title">About</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">About</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+    <!-- About Us Area Start -->
+    <div class="about-us-area section-padding-80-0 clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="about-us-content mb-80">
+                        <h3 class="wow fadeInUp" data-wow-delay="100ms">멋쟁이사자처럼과<br>HI-SW 봉사단이 함께하는 <br>웹 기반 전자 액자 경진 대회</h3>
+                        <div class="line wow fadeInUp" data-wow-delay="200ms"></div>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">
+                            2020년 현재, 코로나19로 인해 대학의 꽃인 축제가 열리지 못해 많은 학생들이 아쉬움을 나타내고 있습니다.
+                            이에 재학생들은 이전에 즐겼던 축제를 추억해보고, 신입생들은 간접적으로나마 축제를 경험해볼 수 있는 기회를 제공하고자
+                            동국대학교 멋쟁이사자처럼 8기가 모여 사진과 영상으로 만나는 축제, 웹 기반 전자 액자 경진 대회 사이트를 제작하였습니다.
+                        </p>
+                        <div class="line wow fadeInUp" data-wow-delay="200ms"></div>
+                        <p class="wow fadeInUp" data-wow-delay="400ms">
+                            저작권을 위반하거나 본인이 촬영하지 않은 사진과 영상을 업로드 할 경우 수상 대상에서 제외될 수 있습니다.
+                            동국대학교 축제 사진이나 영상이 아닌 경우에도 수상 대상에서 제외됩니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="about-video-area mb-80 wow fadeInUp" data-wow-delay="100ms">
+                        <img src="{%static 'img/core-img/dgulion.png' %}" alt="임시이미지">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us Area End -->
+
+    <!-- Why Choose Us Area Start -->
+    <section class="why-choose-us-area bg-gray section-padding-80-0 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                        <h2>투표 및 상품</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Why Choose Area -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="chosse-us-icon">
+                            <i class="fa fa-film" aria-hidden="true"></i>
+                        </div>
+                        <h4>일정 안내</h4>
+                        <table class="type04">
+                            <tr>
+                                <th scope="row">투표 기간</th>
+                                <td>11월 1일 자정까지</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수상작 발표</th>
+                                <td>11월 2일 (예정)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Single Why Choose Area -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="chosse-us-icon">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </div>
+                        <h4>투표 안내</h4>
+                        <p>
+                            투표는 게시물 좋아요 버튼을 통해 여러 작품에 행사할 수 있습니다.
+                            투표 기간 동안 투표 수는 작성자에게만 공개되며
+                            수상작 발표 이후 모든 작품의 득표수가 공개될 예정입니다.
+                        </p>
+                        <p>
+                            수상작은 좋아요 수에 따라 결정되며, 수상자로 선정된 재학생분들에게는 상금 지급과 함께 메인에 작품이 전시될 수 있는 기회를 드립니다.
+                        </p>
+                        <p>
+                            신입생분들은 축제 사진과 영상을 업로드할 수 없다는 점을 고려하여 투표를 행사한 30명을 추첨하여 소정의 기프티콘을 드릴 예정입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Single Why Choose Area -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="chosse-us-icon">
+                            <i class="fa fa-camera" aria-hidden="true"></i>
+                        </div>
+                        <h4>상품 안내</h4>
+                        <table class="type04">
+                            <tr>
+                                <th scope="row">대상 1명</th>
+                                <td>300,000원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">최우수상 1명</th>
+                                <td>200,000원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">우수상 1명</th>
+                                <td>100,000원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">장려상 8명 (부문별 2명)</th>
+                                <td>50,000원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">신입생 30명</th>
+                                <td>스타벅스 1만원권</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose  us Area End -->
+
+    <!-- Our Team Area Start -->
+    <section class="our-team-area section-padding-80-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                        <h2>개발 및 지원</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Team Member Area -->
+                <div class="col-md-6 col-xl-12">
+                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
+                        <h5>강동희 | 김태연 | 이소정 | 이예은 | 이형석 | 임도연 | 주현이 | 최현지</h5>
+                        <span>개발 | 동국대학교 멋쟁이사자처럼 8기</span>
+                    </div>
+                </div>
+                <!-- Mentor Member Area -->
+                <div class="col-md-6 col-xl-12">
+                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
+                        <h5>김연진 | 박현준 | 양준혁 | 연제훈 | 이주영</h5>
+                        <span>멘토 | 동국대학교 멋쟁이사자처럼 운영진</span>
+                    </div>
+                </div>
+                <!-- Support Member Area -->
+                <div class="col-md-6 col-xl-12">
+                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
+                        <h5>동국대학교 융합교육원 | 동국대학교 제50대 총학생회 하이라이트</h5>
+                        <span>지원 | 상금 및 상품 지원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Team Area End -->
+{% endblock %}
