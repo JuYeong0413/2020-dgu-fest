@@ -41,16 +41,39 @@ Last Update: Feb 22, 2019
 @import url(default-assets/themify-icons.css);
 @import url(style2.css);
 /* :: 01.0 Reboot CSS */
+
 * {
   margin: 0;
   padding: 0; }
 
+table.type04 {
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: left;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  margin : 20px 10px;
+}
+table.type04 th {
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+table.type04 td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
   position: relative;
-  z-index: auto; }
+  z-index: auto;
+}
 
 h1,
 h2,
