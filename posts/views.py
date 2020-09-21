@@ -27,6 +27,7 @@ def update(request, post_id):
         post.title = request.POST['title']
         post.content = request.POST['content']
         post.mediafile = request.FILES.get('mediafile')
+        post.mediatype = request.FILES.get('mediafile').content_type
         post.save()
         return redirect('posts:gallery')
     return render(request,'posts/update.html',{'post':post})
