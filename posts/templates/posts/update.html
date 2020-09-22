@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-{% extends 'dgufest/base.html' %}
-=======
 {% extends 'base.html' %}
->>>>>>> upstream/master
 {% load static %}
 {% block content %}
 
@@ -10,11 +6,7 @@
 <div class="alime--blog-area section-padding-80">
     <div class="container">
         <div class="row justify-content-center">
-<<<<<<< HEAD
-            <div class="col-12 col-lg-10">
-=======
             <div class="col-12 col-lg-10"></div>
->>>>>>> upstream/master
         </div>
     </div>
 </div>
@@ -29,43 +21,15 @@
 
                 <!-- Leave A Reply -->
                 <div class="alime-contact-form mt-20">
-<<<<<<< HEAD
-                    <h4 class="mb-30">글 수정</h4>
-
-                    <!-- Form -->
-                    <form action="{% url 'posts:update' post.pk %}" method="POST"  enctype="multipart/form-data">
-=======
                     <h4 class="mb-30">사진/영상 업로드</h4>
 
                     <!-- Form -->
                     <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data">
->>>>>>> upstream/master
                         {% csrf_token %}
                         <div class="container">
                             <div class="form-group">
                                 <label>카테고리</label>
                                 <select name="category" id="category">
-<<<<<<< HEAD
-                                    <option value="pub" >주점</option>
-                                    <option value="booth">부스</option>
-                                    <option value="performance">공연</option>
-                                    <option value="etc">기타</option>
-                                </select>
-                            </div>
-                        </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" value="{{ post.title }}" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control mb-30" name="content" placeholder="내용 입력">{{ post.content }}</textarea>
-                            </div>
-                            <div class="col-12">
-                                <input type="file" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn alime-btn btn-2 mt-15">Update</button>
-                            </div>
-=======
                                     {% if post.category == 'pub' %}
                                         <option value="pub" selected>주점</option>
                                         <option value="booth" >부스</option>
@@ -107,7 +71,6 @@
 
                         <div class="col-12">
                             <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
->>>>>>> upstream/master
                         </div>
                     </form>
                 </div>
@@ -118,9 +81,5 @@
 </div>
 <!-- Comment Area End -->
 
-<<<<<<< HEAD
-{% endblock %}
-=======
 {% endblock %}
    
->>>>>>> upstream/master
