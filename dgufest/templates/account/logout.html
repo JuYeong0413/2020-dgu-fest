@@ -1,0 +1,58 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/38.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content text-center">
+                    <h2 class="page-title">Logout</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="icon_house_alt"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Logout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+
+<style>
+    #submit{
+        border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
+        border-top-right-radius:5px;
+        border-bottom-right-radius:5px;
+        padding:5px;
+    }
+    #submit button{
+        border: 1px solid gray;
+        background-color: transparent;
+    }
+    #submit button:hover{
+        background-color:#fc6060;
+    }
+</style>
+
+<center style="padding-top:50px; padding-bottom:100px">
+    <p style="color:#fc6060; font-weight: bolder;">{% trans '정말 로그아웃 하시겠습니까?' %}</p>
+
+    <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <div id="submit">
+        <button type="submit" id="submit">{% trans 'Sign Out' %}</button>
+    </div>
+    </form>
+</center>
+{% endblock %}
