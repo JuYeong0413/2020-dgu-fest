@@ -1,297 +1,63 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title -->
-    <title>Alime - Photography HTML Template</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="{% static 'img/core-img/favicon.png'%}">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- /Preloader -->
-
-    <!-- Top Search Form Area -->
-    <div class="top-search-area">
-        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <!-- Close -->
-                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="ti-close"></i></button>
-                        <!-- Form -->
-                        <form action="#" method="post">
-                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
-                            <button type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<!-- Blog Details Area Start -->
+<div class="alime--blog-area section-padding-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
         </div>
     </div>
+</div>
+<!-- Blog Details Area End -->
 
-    <!-- Header Area Start -->
-    <header class="header-area">
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between" id="alimeNav">
 
-                        <!-- Logo -->
-                        <a class="nav-brand" href="#"><img src="{% static 'img/core-img/logo.png'%}" alt=""></a>
+<div class="comment-area section-padding-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+                <!-- Leave A Reply -->
+                <div class="alime-contact-form mt-20">
+                    <h4 class="mb-30">사진/영상 업로드</h4>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- Menu Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    <!-- Form -->
+                    <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="form-group">
+                                <label>카테고리</label>
+                                <select name="category" id="category">
+                                    <option value="pub">주점</option>
+                                    <option value="booth">부스</option>
+                                    <option value="performance">공연</option>
+                                    <option value="etc">기타</option>
+                                </select>
                             </div>
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">- Home</a></li>
-                                            <li><a href="#">- About</a></li>
-                                            <li><a href="./gallery.html">- Gallery</a></li>
-                                            <li><a href="./">- Blog</a></li>
-                                            <li><a href="#">- Blog Details</a></li>
-                                            <li><a href="#">- Contact</a></li>
-                                            <li><a href="#">- Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                    <li><a href="#">- Dropdown Item</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
-                                    <li class="active"><a href="./">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal"><i class="ti-search"></i></div>
-                            </div>
-                            <!-- Nav End -->
+                    
                         </div>
-                    </nav>
+                            <div class="col-12">
+                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control mb-30" name="content" placeholder="내용 입력"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <input type="file" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End -->
 
-    
-
-    <!-- Blog Details Area Start -->
-    <div class="alime--blog-area section-padding-80">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10">
             </div>
         </div>
     </div>
-    <!-- Blog Details Area End -->
+</div>
+<!-- Comment Area End -->
 
-
-    <div class="comment-area section-padding-80">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                   
-
-                    <!-- Leave A Reply -->
-                    <div class="alime-contact-form mt-20">
-                        <h4 class="mb-30">사진/영상 업로드</h4>
-
-                        <!-- Form -->
-                        <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div class="container">
-                                <div class="form-group">
-                                    <label>카테고리</label>
-                                    <select name="category" id="category">
-                                        <option value="pub">주점</option>
-                                        <option value="booth">부스</option>
-                                        <option value="performance">공연</option>
-                                        <option value="etc">기타</option>
-                                    </select>
-                                </div>
-                        
-                            </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control mb-30" name="content" placeholder="내용 입력"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <input type="file" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Comment Area End -->
-
-    <!-- Follow Area Start -->
-    <div class="follow-area clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Follow Instagram</h2>
-                        <p>@Alime_photographer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Instagram Feed Area -->
-        <div class="instragram-feed-area owl-carousel">
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/11.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/12.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/13.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/14.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/15.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="{% static 'img/bg-img/16.jpg' %}" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="#">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>Alime_photographer</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Follow Area End -->
-
-    <!-- Footer Area Start -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-                        <!-- Copywrite Text -->
-                        <div class="copywrite-text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                        <!-- Footer Logo -->
-                        <div class="footer-logo">
-                            <a href="#"><img src="{% static 'img/core-img/logo2.png' %}" alt=""></a>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="social-info">
-                            <a href="#"><i class="ti-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-linkedin" aria-hidden="true"></i></a>
-                            <a href="#"><i class="ti-pinterest" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
-
-    <!-- **** All JS Files ***** -->
-    <!-- jQuery 2.2.4 -->
-    <script src="{% static 'js/jquery.min.js'%}"></script>
-    <!-- Popper -->
-    <script src="{% static 'js/popper.min.js'%}"></script>
-    <!-- Bootstrap -->
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <!-- All Plugins -->
-    <script src="{% static 'js/alime.bundle.js'%}"></script>
-    <!-- Active -->
-    <script src="{% static 'js/default-assets/active.js'%}"></script>
-
-    <script src="{% static 'js/filesizelimit.js' %}"></script>
-
-
-</body>
-
-</html>
+{% endblock %}
