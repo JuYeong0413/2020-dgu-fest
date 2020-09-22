@@ -23,10 +23,12 @@ def create(request):
 def update(request, post_id):
     post = get_object_or_404(Post,pk=post_id)
     if request.method == "POST":
-        category = request.POST['category']
+        post.category = request.POST['category']
         post.title = request.POST['title']
         post.content = request.POST['content']
-        post.mediafile = request.FILES.get('mediafile')
+        if request.FILES.get('mediafile'):
+            post.mediafile = request.FILES.get('mediafile')
+            post.mediatype = request.FILES.get('mediafile').content_type
         post.save()
         return redirect('posts:gallery')
     return render(request,'posts/update.html',{'post':post})
@@ -34,4 +36,8 @@ def update(request, post_id):
 def delete(request, post_id): 
 	post = get_object_or_404(Post, pk=post_id) 
 	post.delete()
-	return redirect("posts:gallery")    
+	return redirect("posts:gallery")
+
+
+
+
