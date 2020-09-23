@@ -25,39 +25,20 @@
 </section>
 <!-- Breadcrumb Area End -->
 
-<style>
-    #submit{
-        border-top-left-radius:5px;
-        border-bottom-left-radius:5px;
-        border-top-right-radius:5px;
-        border-bottom-right-radius:5px;
-        padding:5px;
-    }
-    #submit button{
-        border: 1px solid gray;
-        background-color: transparent;
-    }
-    #submit button:hover{
-        background-color:#fc6060;
-    }
-</style>
-
-
-<center style="padding-top:50px; padding-bottom:100px">
+<div id="allauth">
     <p>{% blocktrans %}아직 계정이 없으신가요? 바로
     <a href="{{ signup_url }}" style="color:#fc6060; font-weight: bolder;">회원가입</a> 하세요.{% endblocktrans %}</p>
 
     <form class="login" method="POST" action="{% url 'account_login' %}" >
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <div id="submit">
-        <button class="primaryAction" type="submit" id="submit">{% trans "Sign In" %}</button>
-    </div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div id="submit">
+            <a class="button secondaryAction" style="color:#fc6060; font-weight: bolder;" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+            <button class="primaryAction" type="submit" id="submit">{% trans "Sign In" %}</button>
+        </div>
     </form>
-</center>
-
 </div>
 {% endblock %}

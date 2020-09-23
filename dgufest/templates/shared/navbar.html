@@ -31,30 +31,6 @@
 
 
     <!--django-allauth-->
-    <style>
-        #A{
-            margin-left:30px;
-            border-top-left-radius:5px;
-            border-bottom-left-radius:5px;
-            border-top-right-radius:5px;
-            border-bottom-right-radius:5px;
-        }
-        #B{
-            margin-left:0px;
-            border-top-left-radius:5px;
-            border-bottom-left-radius:5px;
-            border-top-right-radius:5px;
-            border-bottom-right-radius:5px;
-        }
-        #btn_group button{
-            border: 1px solid white;
-            background-color: transparent;
-            padding: 4px
-        }
-        #btn_group button:hover{
-            background-color:#fc6060;
-        }
-    </style>
     {% if user.is_authenticated %}
     <div id="btn_group">
         <button id="A"><a href="{% url 'account_logout' %}" style="color:white">Logout</a></button>
