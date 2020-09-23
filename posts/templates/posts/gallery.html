@@ -38,12 +38,12 @@
                     </div>
 
                     <select id="sort-select" onchange="location = this.value;">
-                        {% if "/?new" in request.get_full_path%}
-                        <option class="sort-new" value="?new" selected>최신순</option>
-                        <option class="sort-random" value="?sort=random" >랜덤순</option>
+                        {% if "/?sort=random" in request.get_full_path %}
+                            <option class="sort-new" value="?new" >최신순</option>
+                            <option class="sort-random" value="?sort=random" selected>랜덤순</option>
                         {% else %}
-                        <option class="sort-new" value="?new" >최신순</option>
-                        <option class="sort-random" value="?sort=random" >랜덤순</option>
+                            <option class="sort-new" value="?new" selected>최신순</option>
+                            <option class="sort-random" value="?sort=random" >랜덤순</option>
                         {% endif %}
                     </select>
 
