@@ -30,13 +30,13 @@
                 <!-- Projects Menu -->
                 <div class="alime-projects-menu wow fadeInUp" data-wow-delay="100ms">
                     <div class="portfolio-menu text-center">
-                        <button class="btn active" data-filter="*">All</button>
-                        <button class="btn" data-filter=".pub">주점</button>
-                        <button class="btn" data-filter=".booth">부스</button>
-                        <button class="btn" data-filter=".performance">공연</button>
-                        <button class="btn" data-filter=".etc">기타</button>
+                            <button class="btn active" data-filter="*" >All</button>
+                            <button class="btn" data-filter=".pub" >주점</button>
+                            <button class="btn" data-filter=".booth">부스</button>
+                            <button class="btn" data-filter=".performance">공연</button>
+                            <button class="btn" data-filter=".etc">기타</button>
                     </div>
-
+                   
                     <select id="sort-select" onchange="location = this.value;">
                         {% if "/?sort=random" in request.get_full_path %}
                             <option class="sort-new" value="?new" >최신순</option>
@@ -57,10 +57,10 @@
 
         <div class="row alime-portfolio">
             <!-- Single Gallery Item -->
-            {% include 'shared/gallery_item.html' with category_value="pub" %}
-            {% include 'shared/gallery_item.html' with category_value="booth" %}
-            {% include 'shared/gallery_item.html' with category_value="performance" %}
-            {% include 'shared/gallery_item.html' with category_value="etc" %}
+                {% include 'shared/gallery_item.html' with category_value="pub" %}
+                {% include 'shared/gallery_item.html' with category_value="booth" %}
+                {% include 'shared/gallery_item.html' with category_value="performance" %}
+                {% include 'shared/gallery_item.html' with category_value="etc" %}
         </div>
     </div>
     <div class="row">
