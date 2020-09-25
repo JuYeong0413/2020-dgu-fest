@@ -8,6 +8,8 @@ def gallery(request):
     sort = request.GET.get('sort','') 
     if sort == 'random':
         posts=Post.objects.all().order_by('?')
+    elif sort == 'all':
+        posts=Post.object.all()
     return render(request, 'posts/gallery.html', {'posts':posts})
 
 def new(request):
