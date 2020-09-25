@@ -9,13 +9,13 @@
                             <source src="{{post.mediafile.url}}" type="video/mp4">
                         </video>
                     </div> -->
-                    <div id="video">
-                        <video class="col-12" controls>
+                    <div id="video-{{post.id}}">
+                        <video class="col-12" controls >
                             <source src="{{post.mediafile.url}}" alt="video">
                         </video>
                     </div>
                     <div class="hover-content">
-                        <a href="#video" class="openVideo">+</a>
+                        <a href="#video-{{post.id}}" class="video-play-btn">+</a>
                     </div>  
                 {% else %}
                     <img src ="{{post.mediafile.url}}" alt="">
