@@ -18,7 +18,7 @@ def create(request):
         mediafile = request.FILES.get('mediafile')
         mediatype = mediafile.content_type
         user = request.user
-        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype)
+        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype, user=user)
     return redirect('posts:gallery')
 
 def update(request, post_id):
