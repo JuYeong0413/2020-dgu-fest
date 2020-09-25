@@ -18,6 +18,32 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/cc0d007bbf.js" crossorigin="anonymous"></script>
+    
+    <script language="javascript">
+        function getCookie( cookieName ) {
+            var search = cookieName + "=";
+            var cookie = document.cookie;
+            if( cookie.length > 0 ) {
+                startIndex = cookie.indexOf( cookieName );
+                if( startIndex != -1 ) {
+                    startIndex += cookieName.length;
+                    endIndex = cookie.indexOf( ";", startIndex );
+                    if( endIndex == -1)
+                        endIndex = cookie.length;
+                    return unescape( cookie.substring( startIndex + 1, endIndex ) );
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        if( !getCookie("close20090524") ){
+            window.open("{% url 'popup' %}","타이틀","left=40,top=40,width=505,height=540,resizable=no, scrollbar=no, status=no,menubar=no,toolbar=no,location=no");
+        }
+    </script>
 
 </head>
 
@@ -57,7 +83,7 @@
                     <nav class="classy-navbar justify-content-between" id="alimeNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="#"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                        <a class="nav-brand" href="#"><img src="{% static 'img/core-img/logo3.png' %}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">

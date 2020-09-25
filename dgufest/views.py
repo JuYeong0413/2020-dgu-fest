@@ -11,3 +11,6 @@ def personal_data(request):
 
 def service_terms(request):
     return render(request, 'service_terms.html')
+
+def popup(request):
+    return render(request, 'popup.html')

@@ -1,0 +1,18 @@
+{% load static %}
+<script language="javascript">
+    function setCookie( name, value, expiredays ) {
+        var todayDate = new Date();
+        todayDate.setDate( todayDate.getDate() + expiredays );
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+    }
+    function closeWin(){
+        setCookie("close20090524","close20090524",1);
+        window.close(); 
+    }
+</script>
+
+<body>    
+    <img src="{% static 'img/popup-img/popup.jpg' %}" width="500", height="500", alt="">
+
+    <input type="checkbox" name="Notice" onClick="closeWin()">오늘 하루 동안 열지 않음
+</body>
