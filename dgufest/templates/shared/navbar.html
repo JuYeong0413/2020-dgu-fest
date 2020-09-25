@@ -7,7 +7,7 @@
                 <li><a href="./">- Home</a></li>
                 <li><a href="{% url 'about' %}">- About</a></li>
                 <li><a href="{% url 'posts:gallery' %}">- Gallery</a></li>
-                <li><a href="./blog.html">- Blog</a></li>
+                <li><a href="{% url 'users:mypage' %}">- My page</a></li>
                 <li><a href="./single-blog.html">- Blog Details</a></li>
                 <li><a href="./contact.html">- Contact</a></li>
                 <li><a href="#">- Dropdown</a>
@@ -22,7 +22,7 @@
         </li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'posts:gallery' %}">Gallery</a></li>
-        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="{% url 'users:mypage' %}">My page</a></li>
         <li><a href="./contact.html">Contact</a></li>
     </ul>
 

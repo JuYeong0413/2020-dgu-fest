@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-overlay jarallax">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content text-center">
+                    <h2 class="page-title">My page</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="#"><i class="icon_house_alt"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">My page</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+
+<!-- Contact Area Start -->
+<div class="contact-area section-padding-80-50">
+    <div class="container">
+        <div class="row">
+            {% if user.is_authenticated %}
+                <div class="col-12 col-lg-6">
+                    <h2 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30>내 프로필</h2>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                <!-- Contact Info -->
+                    <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
+                        <p>ID</p>
+                        <a>{{user}}</a>
+                    </div>
+                <!-- Contact Info -->
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!-- Contact Info -->
+                    <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
+                            <p>Email</p>
+                            <a>{{user.email}}</a>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 text-right wow fadeInUp" data-wow-delay="800ms">
+                        <a href="{% url 'users:ps_change' %}" class="btn alime-btn btn-2 mt-15">비밀번호 변경</a>
+                </div>
+                </div>
+
+            {% else %}
+                <div class="col-12 col-lg-6">
+                    <h3 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30>로그인 후 <br>이용 가능합니다</h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- mypage Area End -->
+
+{% endblock %}
