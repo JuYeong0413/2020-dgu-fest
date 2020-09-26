@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -41,6 +42,19 @@ def delete(request, post_id):
 	post = get_object_or_404(Post, pk=post_id) 
 	post.delete()
 	return redirect("posts:gallery")
+
+@login_required
+def post_like(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.user in post.like_user_set.all():
+        post.like_user_set.remove(request.user)
+    else:
+        post.like_user_set.add(request.user)
+    
+    return redirect('posts:gallery')
+
+
 
 
 
