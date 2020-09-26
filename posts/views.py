@@ -4,7 +4,10 @@ from .models import *
 # Create your views here.
 
 def gallery(request):
-    posts=Post.objects.all()
+    posts=Post.objects.all().order_by('-created_at')
+    sort = request.GET.get('sort','') 
+    if sort == 'random':
+        posts=Post.objects.all().order_by('?')
     return render(request, 'posts/gallery.html', {'posts':posts})
 
 def new(request):
