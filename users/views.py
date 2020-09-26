@@ -7,7 +7,7 @@ def mypage(request):
     return render(request, 'users/mypage.html')
 
 
-def ps_change(request):
+def password_change(request):
     context= {}
     if request.method == "POST":
         current_password = request.POST.get("origin_password")
@@ -24,4 +24,4 @@ def ps_change(request):
                 context.update({'error':"새로운 비밀번호를 다시 확인해주세요."})
     else:
         context.update({'error':"현재 비밀번호가 일치하지 않습니다."})
-    return render(request, 'users/ps_change.html')
+    return render(request, 'users/password_change.html')
