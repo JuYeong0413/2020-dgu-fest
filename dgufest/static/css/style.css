@@ -1684,13 +1684,6 @@ input:required {
   #submit button:hover{
       background-color:#fc6060;
   }
-  
-  #btn_group{
-      border-top-left-radius:5px;
-      border-bottom-left-radius:5px;
-      border-top-right-radius:5px;
-      border-bottom-right-radius:5px;
-  }
   #A{
       margin-left:30px;
   }
@@ -1700,7 +1693,11 @@ input:required {
   #btn_group button{
       border: 1px solid white;
       background-color: transparent;
-      padding: 4px
+      padding: 4px;
+      border-top-left-radius:5px;
+      border-bottom-left-radius:5px;
+      border-top-right-radius:5px;
+      border-bottom-right-radius:5px;
   }
   #btn_group button:hover{
       background-color:#fc6060;
