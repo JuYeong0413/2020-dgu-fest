@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-
     'posts',
+    'users',
     
 ]
 
@@ -128,6 +128,14 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
+SENDGRID_API_KEY = os.getenv('G-p1qRnQSsu5qbs3M8KjPA')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -143,3 +151,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'dgufest', 'media')
 
 
+#account_email
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
