@@ -14,3 +14,5 @@ setTimeout(function() {
     $('#all').trigger('click'); 
 
 },300);
+
+
