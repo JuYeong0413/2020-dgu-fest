@@ -15,7 +15,7 @@ class Profile(models.Model):
         ('M', 'Male'),
     }
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
-
+    phone_number = models.PositiveIntegerField(verbose_name='phone number', unique=True, null=True, validators=[validate_phonenumber])
 
     
     
