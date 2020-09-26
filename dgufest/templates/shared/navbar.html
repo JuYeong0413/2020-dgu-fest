@@ -1,3 +1,5 @@
+{% load static %}
+
 <!-- Nav Start -->
 <div class="classynav">
     <ul id="nav">
@@ -21,7 +23,7 @@
             </ul>
         </li>
         <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'posts:gallery' %}">Gallery</a></li>
+       <li><a href="{% url 'posts:gallery' %}" id="gallery">Gallery</a></li>
         <li><a href="{% url 'users:mypage' %}">My page</a></li>
         <li><a href="./contact.html">Contact</a></li>
     </ul>
@@ -30,3 +32,5 @@
     <div class="search-icon" data-toggle="modal" data-target="#searchModal"><i class="ti-search"></i></div>
 </div>
 <!-- Nav End -->
+
+<script src="{% static 'js/triggerclick.js' %}"></script>    
