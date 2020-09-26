@@ -1,12 +1,6 @@
 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 {{category_value}} wow fadeInUp" data-wow-delay="100ms" style="display: flex; flex-direction: column-reverse;">
     <div class="single-portfolio-content">
         {% if "video" in post.mediatype %}
-            <!-- <a href="#video" class="video-play-btn">
-            <div id="video">
-                <video class="col-12" controls>
-                    <source src="{{post.mediafile.url}}" type="video/mp4">
-                </video>
-            </div> -->
             <div id="video-{{post.id}}" style="display: block !important;">
                 <video class="col-12" controls >
                     <source src="{{post.mediafile.url}}" alt="video">
