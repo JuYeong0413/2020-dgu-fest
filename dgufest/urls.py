@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('about/', views.about, name="about"),
     path('accounts/', include('allauth.urls')),
+    path('users/', include('users.urls')),
     path('personal_data/', views.personal_data, name="personal_data"),
     path('service_terms/', views.service_terms, name="service_terms"),
     path('popup/', views.popup, name="popup"),
