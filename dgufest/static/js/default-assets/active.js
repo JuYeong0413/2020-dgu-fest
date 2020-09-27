@@ -202,7 +202,7 @@
         //     }
         // });
 
-        $('.portfolio-imgs').magnificPopup({
+        $('.portfolio-img').magnificPopup({
             type: 'ajax'
         });
 
