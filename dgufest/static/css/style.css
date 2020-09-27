@@ -1684,24 +1684,6 @@ input:required {
   #submit button:hover{
       background-color:#fc6060;
   }
-  #A{
-      margin-left:30px;
-  }
-  #B{
-      margin-left:0px;
-  }
-  #btn_group button{
-      border: 1px solid white;
-      background-color: transparent;
-      padding: 4px;
-      border-top-left-radius:5px;
-      border-bottom-left-radius:5px;
-      border-top-right-radius:5px;
-      border-bottom-right-radius:5px;
-  }
-  #btn_group button:hover{
-      background-color:#fc6060;
-  }
 
   #allauth {
     text-align: center;
