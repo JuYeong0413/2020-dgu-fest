@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib.auth.decorators import login_required
-
+from django.http import HttpResponse
+import json, pdb
 # Create your views here.
 
 def gallery(request):
@@ -46,14 +47,19 @@ def delete(request, post_id):
 @login_required
 def post_like(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
+    post_like, post_like_created = post.like_set.get_or_create(user=request.user)
 
-    if request.user in post.like_user_set.all():
-        post.like_user_set.remove(request.user)
+    if not post_like_created:
+        post_like.delete()
+        heart_icon = '<i class="far fa-heart"></i>'
     else:
-        post.like_user_set.add(request.user)
-    
-    return redirect('posts:gallery')
+        heart_icon = '<i class="fas fa-heart"></i>'
 
+    context = {
+        'heart_icon': heart_icon
+    }
+
+    return HttpResponse(json.dumps(context), content_type="application/json")
 
 
 
