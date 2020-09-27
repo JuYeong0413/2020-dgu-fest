@@ -56,7 +56,8 @@ def post_like(request, post_id):
         heart_icon = '<i class="fas fa-heart"></i>'
 
     context = {
-        'heart_icon': heart_icon
+        'heart_icon': heart_icon,
+        'like_count': post.like_count,
     }
 
     return HttpResponse(json.dumps(context), content_type="application/json")
