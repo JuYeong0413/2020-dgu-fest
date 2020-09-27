@@ -95,7 +95,7 @@
                 type: "POST",
                 success: function(response) {
                     likeButton.html(response.heart_icon);
-                    $(`#count-${postId}`).html(response.like_count);
+                    $(`#count-${postId}`).html('좋아요 '+response.like_count+'개');
                 },
 
                 error: function(response) {
