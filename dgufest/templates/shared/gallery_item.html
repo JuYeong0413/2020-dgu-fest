@@ -1,30 +1,38 @@
 <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 {{category_value}} wow fadeInUp" data-wow-delay="100ms" style="display: flex; flex-direction: column-reverse;">
-    <div class="single-portfolio-content">
-        {% if "video" in post.mediatype %}
-            <!-- <a href="#video" class="video-play-btn">
-            <div id="video">
-                <video class="col-12" controls>
-                    <source src="{{post.mediafile.url}}" type="video/mp4">
-                </video>
-            </div> -->
-            <div id="video-{{post.id}}" style="display: block !important;">
-                <video class="col-12" controls >
-                    <source src="{{post.mediafile.url}}" alt="video">
-                </video>
-            </div>
-            <div class="hover-content">
-                <a href="#video-{{post.id}}" class="video-play-btn">+</a>
-            </div>  
-        {% else %}
-            <img src ="{{post.mediafile.url}}" alt="">
-            <div class="hover-content">
-                <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
-            </div>
-        {% endif %}
-        {% if post.title %}
+    <div class="card">
+        <div class="single-portfolio-content">
+            {% if "video" in post.mediatype %}
+                <div id="video-{{post.id}}" style="display: block !important;">
+                    <video class="col-12" controls >
+                        <source src="{{post.mediafile.url}}" alt="video">
+                    </video>
+                </div>
+                <div class="hover-content">
+                    <a href="#video-{{post.id}}" class="video-play-btn">+</a>
+                </div>  
+            {% else %}
+                <img src ="{{post.mediafile.url}}" alt="">
+                <div class="hover-content">
+                    <a href="{{post.mediafile.url}}" class="portfolio-img">+</a>
+                </div>
+            {% endif %}
             <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
-        {% endif %}
+            {% if user == post.user %}
+                <span id="count-{{post.id}}">좋아요 {{ post.like_count }}개</span>
+            {% endif %}
+        </div>    
+        <a href="{% url 'posts:post_like' post.id %}">
+            {% if user in post.like_user_set.all %}
+                <a href="#" class="like_toggle" data-post-id={{post.id}}>
+                    <i class="fas fa-heart"></i>
+                </a>
+            {% else %}
+                <a href="#" class="like_toggle" data-post-id={{post.id}}>
+                    <i class="far fa-heart"></i>
+                </a>
+            {% endif %}
+        </a>
+                <!-- <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
+            <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a> -->
     </div>
-    <!-- <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
-    <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a> -->
 </div>
