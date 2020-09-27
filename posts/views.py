@@ -42,6 +42,10 @@ def delete(request, post_id):
 	post.delete()
 	return redirect("posts:gallery")
 
+def show(request, id):
+    post = Post.objects.get(pk=id)
+    return render(request, 'posts/show.html', {'post': post})
+
 
 
 

@@ -1,0 +1,50 @@
+{% block content %}
+
+<div class="ajax-text-and-file">
+    {% if "video" in post.mediatype %}
+        <div id="video-{{post.id}}" style="display: block !important;" class="content file">
+            <video class="col-12" controls >
+                <source src="{{post.mediafile.url}}" alt="video">
+            </video>
+        </div>
+    {% else %}
+        <div class="content file">
+            <img src ="{{post.mediafile.url}}" alt="">
+        </div>
+    {% endif %}
+
+    <div class="content text">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+    </div>
+</div>
+
+{% endblock %}
+
+<style>
+.ajax-text-and-file{
+    max-width:1000px;
+    margin:20px auto;
+    background-color:white;
+    padding:0;
+    line-height:0;
+}
+.content{
+    width:50%;
+    float:left;
+}
+
+.content video,img{
+    width:100%;
+    height:auto;
+}
+
+.content h3,p{
+    color:white;
+}
+
+.content.text{
+    padding:2%;
+}
+
+</style>

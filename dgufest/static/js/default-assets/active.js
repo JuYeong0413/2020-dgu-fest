@@ -175,30 +175,41 @@
     // *********************************
 
     if ($.fn.magnificPopup) {
-        $('.video-play-btn').magnificPopup({
-            type: 'inline',
-            callbacks: {
-              open: function() {
-                // $('html').css('margin-right', 0);
-                // Play video on open:
-                $(this.content).find('video')[0].play();
-                },
-              close: function() {
-                // Reset video on close:
-                $(this.content).find('video')[0].load();
-                }
-              }
-            });
-        $('.portfolio-img').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true,
-                preload: [0, 2],
-                navigateByImgClick: true,
-                tPrev: 'Previous',
-                tNext: 'Next'
-            }
+        // $('.video-play-btn').magnificPopup({
+        //     type: 'inline',
+        //     callbacks: {
+        //       open: function() {
+        //         // $('html').css('margin-right', 0);
+        //         // Play video on open:
+        //         $(this.content).find('video')[0].play();
+        //         },
+        //       close: function() {
+        //         // Reset video on close:
+        //         $(this.content).find('video')[0].load();
+        //         }
+        //       }
+        //     });
+
+        // $('.portfolio-img').magnificPopup({
+        //     type: 'ajax',
+        //     gallery: {
+        //         enabled: true,
+        //         preload: [0, 2],
+        //         navigateByImgClick: true,
+        //         tPrev: 'Previous',
+        //         tNext: 'Next'
+            
+        //     }
+        // });
+
+        $('.portfolio-imgs').magnificPopup({
+            type: 'ajax'
         });
+
+        $('.video-play-btn').magnificPopup({
+            type: 'ajax'
+        });
+
     }
 
     // **************************
