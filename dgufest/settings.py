@@ -153,7 +153,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'dgufest', 'media')
 
 #account_email
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_OPEN = True # 기본값
