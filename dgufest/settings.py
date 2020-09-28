@@ -152,5 +152,26 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'dgufest', 'media')
 
 
 #account_email
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+ACCOUNT_ACTIVATION_DAYS = 1
+REGISTRATION_OPEN = True # 기본값
+
+# Registration
+# https://django-registration.readthedocs.io/en/2.1.2/index.html
+
+# Email Activation
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lhs961021@likelion.org'
+EMAIL_HOST_PASSWORD = 'dlgudtjr159!'
+SERVER_EMAIL = 'lhs961021@likelion.org'
+
+
+# When Login success, go to main page.
+
+LOGIN_REDIRECT_URL = "/"
