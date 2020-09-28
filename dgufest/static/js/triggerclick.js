@@ -13,6 +13,6 @@ function allClick() {
 setTimeout(function() {
     $('#all').trigger('click'); 
 
-},300);
+},2000);
 
 
