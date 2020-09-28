@@ -2,7 +2,7 @@
 <div class="classynav">
     <ul id="nav">
         <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="#">Pages</a>
+        <!-- <li><a href="#">Pages</a>
             <ul class="dropdown">
                 <li><a href="./">- Home</a></li>
                 <li><a href="{% url 'about' %}">- About</a></li>
@@ -19,11 +19,11 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'posts:gallery' %}" id="gallery">Gallery</a></li>
         <li><a href="{% url 'users:mypage' %}">My page</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        <!-- <li><a href="./contact.html">Contact</a></li> -->
         {% if user.is_authenticated %}
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
