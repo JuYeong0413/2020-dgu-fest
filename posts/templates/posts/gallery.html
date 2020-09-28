@@ -77,22 +77,9 @@
             {% endif %}
             {% if posts.has_next %}
                 <a href="?page={{posts.next_page_number}}" class="btn alime-btn btn-2 mt-15">View More</a>
-            {% endif %}
-
-                
+            {% endif %}        
         </div>
     </div>
-     <!-- {% if posts.has_previous %}
-            <a href="?page=1">맨 앞으로</a>
-            <a href="?page={{posts.previous_page_number}}">이전으로</a>
-        {% endif %}
-            <span>{{post.number}}</span>
-            <span>/</span>
-            <span>{{post.paginator.num_pages}}</span> -->
-        <!-- {% if posts.has_next %}
-            <a href="?page={{posts.next_page_number}}">다음으로</a>
-            <a href="?page={{posts.paginator.num_pages}}">맨 뒤로</a>
-        {% endif %} -->
 </div>
 <!-- Gallery Area End -->
 

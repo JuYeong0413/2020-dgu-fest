@@ -13,11 +13,21 @@ def gallery(request):
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     if sort == 'random':
-        posts=Post.objects.all().order_by('?')
-        paginator = Paginator(posts, 5)
+        random_posts=Post.objects.all().order_by('?')
+        paginator = Paginator(random_posts, 5)
         page = request.GET.get('page')
         posts = paginator.get_page(page)
     return render(request, 'posts/gallery.html', {'posts':posts})
+
+def random(request):
+    sort = request.GET.get('sort','') 
+    if sort == 'random':
+        random=Post.objects.all().order_by('?')
+        paginator = Paginator(random, 5)
+        page = request.GET.get('page')
+        random = paginator.get_page(page)
+        return render(request, 'posts/gallery.html', {'random':random})
+
 
 def new(request):
     return render(request, 'posts/new.html')
