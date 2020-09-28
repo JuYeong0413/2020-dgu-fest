@@ -3,13 +3,20 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 import json, pdb
+from django.core.paginator import Paginator
+from django.db.models import Count
 # Create your views here.
 
 def gallery(request):
     posts=Post.objects.all().order_by('-created_at')
     sort = request.GET.get('sort','') 
+    # paginator = Paginator(posts, 50)
+    # page = request.GET.get('page')
+    # posts = paginator.get_page(page)
     if sort == 'random':
         posts=Post.objects.all().order_by('?')
+    if sort == 'likes':
+        posts = Post.objects.all().order_by('-like_user_set')
     return render(request, 'posts/gallery.html', {'posts':posts})
 
 def new(request):
