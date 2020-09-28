@@ -1,9 +1,8 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
-{% load account %}
 
-{% block head_title %}{% trans "Password Reset" %}{% endblock %}
+{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 {% block content %}
 <!-- Breadcrumb Area Start -->
@@ -12,11 +11,11 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="breadcrumb-content text-center">
-                    <h2 class="page-title">Password Reset</h2>
+                    <h2 class="page-title">Email Confirm</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="icon_house_alt"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Password Reset</li>
+                            <li class="breadcrumb-item active" aria-current="page">Email Confirm</li>
                         </ol>
                     </nav>
                 </div>
@@ -25,10 +24,7 @@
     </div>
 </section>
 <div id="allauth">
-    {% if user.is_authenticated %}
-    {% include "account/snippets/already_logged_in.html" %}
-    {% endif %}
-    <p>{% blocktrans %}이메일이 전송되었습니다.{% endblocktrans %}</p>
+    <p>{% blocktrans %}이메일 인증 메일이 전송되었습니다.<br> 회원가입 완료를 위해 전송된 메일의 링크를 클릭하세요.{% endblocktrans %}</p>
     <p style="color: #fc6060">{% blocktrans %}↓몇 분 후에도 이메일이 오지 않으면 저희에게 연락주세요.↓{% endblocktrans %}</p>
     <a href="https://pf.kakao.com/_jxbIxfd">
         <i class="fas fa-comment">  카카오톡 채널 <동국대-멋쟁이 사자처럼></i>

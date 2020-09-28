@@ -1,0 +1,43 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account %}
+
+{% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+
+
+{% block content %}
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/38.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content text-center">
+                    <h2 class="page-title">Email Confirm</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="icon_house_alt"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Email Confirm</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="allauth">
+    {% if confirmation %}
+    {% user_display confirmation.email_address.user as user_display %}
+        <p>{% blocktrans with confirmation.email_address.email as email %}<a href="mailto:{{ email }}" style="color :#fc6060">{{ email }}</a>이 {{ user_display }}님의 이메일임을 확인해주세요.{% endblocktrans %}</p>
+        <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+        {% csrf_token %}
+        <div id="submit">
+            <button type="submit" id="submit">{% trans '이메일 인증' %}</button>
+        </div>
+        </form>
+    {% else %}
+    {% url 'account_email' as email_url %}
+        <p>{% blocktrans %}이 이메일 인증 링크는 만료되거나 올바르지 않습니다. <br>다시 <a href="{{ email_url }}" style="color :#fc6060; font-weight: bolder;">이메일 인증</a>을 하세요.{% endblocktrans %}</p>
+    {% endif %}
+</div>
+{% endblock %}
