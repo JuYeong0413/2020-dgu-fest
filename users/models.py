@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 from .validation import *
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='name', max_length=10)
     student_id = models.PositiveIntegerField(validators=[validate_studentnumber], null=True)
     birth_date = models.DateTimeField(verbose_name='birth_date', null=True, blank=True)
