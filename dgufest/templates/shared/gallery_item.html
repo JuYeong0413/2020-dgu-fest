@@ -18,7 +18,7 @@
             {% endif %}
             <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
             {% if user == post.user %}
-                <span id="count-{{post.id}}">좋아요 {{ post.like_count }}개</span>
+                <span id="count-{{post.id}}" style="font-family: 'S-CoreDream-3Light';">좋아요 {{ post.like_count }}개</span>
             {% endif %}
         </div>    
         <a href="{% url 'posts:post_like' post.id %}">
@@ -32,8 +32,8 @@
                 </a>
             {% endif %}
         </a>
-                <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
-            <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a>
+            <!-- <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
+            <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a> -->
     </div>
 </div>
 
