@@ -3,6 +3,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 import json, pdb
+from django.contrib.auth.models import User
 # Create your views here.
 
 def gallery(request):
@@ -63,6 +64,7 @@ def post_like(request, post_id):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
-
-
-
+@login_required
+def like_list(request):
+    likes = Like.objects.filter(user=request.user)
+    return render (request,'posts/like_list.html', {'likes':likes})
