@@ -9,14 +9,16 @@ from django.core.paginator import Paginator
 def gallery(request):
     posts=Post.objects.all().order_by('-created_at')
     sort = request.GET.get('sort','') 
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 20)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     if sort == 'random':
-        random_posts=Post.objects.all().order_by('?')
-        paginator = Paginator(random_posts, 5)
-        page = request.GET.get('page')
-        posts = paginator.get_page(page)
+        posts=Post.objects.all().order_by('?')
+        # paginator = Paginator(random_posts, 5)
+        # page = request.GET.get('page')
+        # posts = paginator.get_page(page)
+    if sort == 'likes':
+        posts = Post.objects.all().order_by('-like_user_set')
     return render(request, 'posts/gallery.html', {'posts':posts})
 
 def new(request):
