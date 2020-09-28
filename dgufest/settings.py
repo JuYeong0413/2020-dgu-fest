@@ -163,15 +163,6 @@ REGISTRATION_OPEN = True # 기본값
 
 # Email Activation
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'lhs961021@likelion.org'
-EMAIL_HOST_PASSWORD = 'dlgudtjr159!'
-SERVER_EMAIL = 'lhs961021@likelion.org'
-
-
 # When Login success, go to main page.
 
 LOGIN_REDIRECT_URL = "/"
