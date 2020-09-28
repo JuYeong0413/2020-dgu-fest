@@ -37,7 +37,7 @@
         </form>
     {% else %}
     {% url 'account_email' as email_url %}
-        <p>{% blocktrans %}이 이메일 인증 링크는 만료되거나 올바르지 않습니다. <br>다시 <a href="{{ email_url }}" style="color :#fc6060; font-weight: bolder;">이메일 인증</a>을 하세요.{% endblocktrans %}</p>
+        <p>{% blocktrans %}이 이메일 인증 링크는 만료되었거나 올바르지 않습니다. <br>다시 <a href="{{ email_url }}" style="color :#fc6060; font-weight: bolder;">이메일 인증</a>을 해주세요.{% endblocktrans %}</p>
     {% endif %}
 </div>
 {% endblock %}
