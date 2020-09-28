@@ -44,6 +44,10 @@ def delete(request, post_id):
 	post.delete()
 	return redirect("posts:gallery")
 
+def show(request, id):
+    post = Post.objects.get(pk=id)
+    return render(request, 'posts/show.html', {'post': post})
+    
 @login_required
 def post_like(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
