@@ -37,12 +37,12 @@
                 <ul class="dropdown">
                     <li><a href="{% url 'users:mypage' %}">- My page</a></li>
                     <li><a href="{% url 'posts:like_list' %}">- 좋아요 누른 글</a></li>
-                    <li><a href="{% url 'posts:postlist' %}">- 내가 쓴 글</a></li>
+                    <li><a href="{% url 'posts:postlist'%}">- 내가 쓴 글</a></li>
                 </ul>
             </li>
-            {% else %}
+        {% else %}
             <li><a href="{% url 'users:mypage' %}">My page</a></li>
-            {% endif %}
+        {% endif %}
         <li><a href="./contact.html">Contact</a></li>
         {% if user.is_authenticated %}
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
