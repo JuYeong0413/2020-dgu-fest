@@ -173,22 +173,11 @@
     // *********************************
     // :: 9.0 Magnific Popup Active Code
     // *********************************
-
     if ($.fn.magnificPopup) {
         $('.video-play-btn').magnificPopup({
-            type: 'inline',
-            callbacks: {
-              open: function() {
-                // $('html').css('margin-right', 0);
-                // Play video on open:
-                $(this.content).find('video')[0].play();
-                },
-              close: function() {
-                // Reset video on close:
-                $(this.content).find('video')[0].load();
-                }
-              }
-            });
+            type: 'iframe'
+        });
+            
         $('.portfolio-img').magnificPopup({
             type: 'image',
             gallery: {
@@ -199,6 +188,18 @@
                 tNext: 'Next'
             }
         });
+    }
+
+    if ($.fn.magnificPopup) {
+
+        $('.whyrano-img').magnificPopup({
+            type: 'ajax'
+        });
+
+        $('.whyrano-video').magnificPopup({
+            type: 'ajax'
+        });
+
     }
 
     // **************************
