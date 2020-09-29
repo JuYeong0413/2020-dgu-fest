@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import User, Profile
 from allauth.account.forms import SignupForm
 from .validation import *
 
@@ -13,3 +13,8 @@ class MyCustomSignupForm(SignupForm):
         user.student_id = self.cleaned_data['student_id']
         user.save()
         return user
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['name', 'student_id']
