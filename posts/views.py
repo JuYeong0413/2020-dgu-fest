@@ -66,3 +66,9 @@ def post_like(request, post_id):
 def like_list(request):
     likes = Like.objects.filter(user=request.user)
     return render(request, 'posts/like_list.html', {'likes': likes})
+
+
+def postlist(request, id):
+    postlist_user = get_object_or_404(User, pk=id)
+    context = {'posts' : Post.objects.filter(user=postlist_user), }
+    return render(request, 'posts.postlist.html', context)
