@@ -77,7 +77,13 @@ def post_like(request, post_id):
 
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+@login_required
+def like_list(request):
+    likes = Like.objects.filter(user=request.user)
+    return render(request, 'posts/like_list.html', {'likes': likes})
 
 
-
-
+def postlist(request):
+    user = request.user
+    context = {'posts' : Post.objects.filter(user=user)}
+    return render(request, 'posts/postlist.html', context)
