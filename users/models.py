@@ -6,7 +6,7 @@ from .validation import *
 from django import forms
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='name', max_length=10)
     student_id = models.PositiveIntegerField(validators=[validate_studentnumber], null=True)
     birth_date = models.DateTimeField(verbose_name='birth_date', null=True, blank=True)
