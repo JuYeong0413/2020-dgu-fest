@@ -3,8 +3,6 @@ from .models import *
 from django.contrib.auth.hashers import check_password
 from django.core.exceptions import PermissionDenied
 from django import forms
- 
-
 
 def mypage(request):
     return render(request, 'users/mypage.html')
