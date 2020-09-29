@@ -9,5 +9,6 @@ urlpatterns = [
     path('update/<int:post_id>/', update, name="update"),
     path('delete/<int:post_id>/', delete, name="delete"),
     path('<int:post_id>/post_like/', post_like, name="post_like"),
-    path('like_list/', views.Likelist.as_view(), name="like_list"),
+    path('like_list/', like_list, name="like_list"),
+
 ]
