@@ -33,8 +33,8 @@
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
         {% endif %}
-            <div id="submit">
-                <button type="submit" id="submit">{% trans 'Sign Out' %}</button>
+            <div class="col-12" data-wow-delay="800ms">
+                <button type="submit" class="btn alime-btn btn-2 mt-15">{% trans 'Sign Out' %}</button>
             </div>
     </form>
 </div>
