@@ -36,8 +36,8 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <p style="color: red; font-weight: bolder;">※ 이메일은 학생인증을 위해 학교 웹메일로 작성해주세요. ※</p>
-            <div id="submit">
-                <button type="submit" id="submit">{% trans "Sign Up" %}</button>
+            <div class="col-12" data-wow-delay="800ms">
+                <button type="submit" class="btn alime-btn btn-2 mt-15">{% trans 'Sign Up' %}</button>
             </div>
     </form>
     <p style="padding-top: 30px; color: #fc6060">{% blocktrans %}↓회원가입에 문제가 있으시면 저희에게 연락주세요.↓{% endblocktrans %}</p>
