@@ -37,6 +37,7 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <p style="color: red; font-weight: bolder;">※ 이메일은 학생인증을 위해 학교 웹메일로 작성해주세요. ※</p>
+        <p style="color: black; font-weight: bolder;">회원가입 시 해당 사이트의 서비스 이용약관 및 개인정보처리방침을 확인하였으며, 동의합니다.</p>
         <div id="submit">
             <button type="submit" id="submit">{% trans "Sign Up" %}</button>
         </div>
@@ -62,3 +63,4 @@ the following context:
     <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
     information on how to display this in a template.
 {% endcomment %}
+
