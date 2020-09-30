@@ -35,7 +35,7 @@
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <p style="color: red; font-weight: bolder;">※ 이메일을 설정하지 않으시면 비밀번호를 잊어버렸을 때 비밀번호 초기화가 불가능합니다. ※</p>
+        <p style="color: red; font-weight: bolder;">※ 이메일은 학생인증을 위해 학교 웹메일로 작성해주세요. ※</p>
             <div id="submit">
                 <button type="submit" id="submit">{% trans "Sign Up" %}</button>
             </div>
@@ -46,3 +46,15 @@
 </div>
 
 {% endblock %}
+
+{% comment %}
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+{% endcomment %}

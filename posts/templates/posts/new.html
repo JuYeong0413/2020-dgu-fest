@@ -39,13 +39,14 @@
                     
                         </div>
                             <div class="col-12">
-                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required>
+                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required style="color:black;">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control mb-30" name="content" placeholder="내용 입력"></textarea>
+                                <textarea class="form-control mb-30" name="content" placeholder="내용 입력" style="color:black;"></textarea>
                             </div>
                             <div class="col-12">
-                                <input type="file" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
+                                <label for="input-mediafile" class="btn btn-outline" style="border: 1px solid #80808042;">파일 선택</label>
+                                <input type="file" id="input-mediafile" style="display: none;" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
