@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.hashers import check_password
-
+from django.contrib.auth.models import User
 
 def mypage(request):
     return render(request, 'users/mypage.html')
-
 
 def password_change(request):
     context= {}

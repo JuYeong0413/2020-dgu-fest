@@ -29,6 +29,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='profile',
             name='student_id',
-            field=models.PositiveIntegerField(null=True, validators=[users.validation.validate_studentnumber]),
+            field=models.PositiveIntegerField(null=True),
         ),
     ]
