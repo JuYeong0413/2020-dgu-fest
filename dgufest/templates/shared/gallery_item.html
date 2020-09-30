@@ -3,36 +3,36 @@
         <div class="single-portfolio-content">
             {% if "video" in post.mediatype %}
                 <div id="video-{{post.id}}" style="display: block !important;">
-                    <video class="col-12" controls >
+                    <video class="col-12" controls preload="metadata">
                         <source src="{{post.mediafile.url}}" alt="video">
                     </video>
                 </div>
                 <div class="hover-content">
-                    <a href="{% url 'posts:show' post.id %}" class="video-play-btn">+</a>
+                    <a href="{% url 'posts:show' post.id %}" class="whyrano-video">+</a>
                 </div>  
             {% else %}
                 <img src ="{{post.mediafile.url}}" alt="">
                 <div class="hover-content">
-                    <a href="{% url 'posts:show' post.id %}" class="portfolio-img">+</a>
+                    <a href="{% url 'posts:show' post.id %}" class="whyrano-img">+</a>
                 </div>
             {% endif %}
             <p style="padding-top: 20px; word-break: break-all;">{{post.title}}</p>
             {% if user == post.user %}
-                <span id="count-{{post.id}}">좋아요 {{ post.like_count }}개</span>
+                <span id="count-{{post.id}}" style="font-family: 'S-CoreDream-3Light';">좋아요 {{ post.like_count }}개</span>
             {% endif %}
         </div>    
         <a href="{% url 'posts:post_like' post.id %}">
             {% if user in post.like_user_set.all %}
-                <a href="#" class="like_toggle" data-post-id={{post.id}}>
+                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60;">
                     <i class="fas fa-heart"></i>
                 </a>
             {% else %}
-                <a href="#" class="like_toggle" data-post-id={{post.id}}>
+                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60;">
                     <i class="far fa-heart"></i>
                 </a>
             {% endif %}
         </a>
-                <!-- <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
+            <!-- <a href="{% url 'posts:update' post.pk %}" class="btn btn-primary">수정하기</a>
             <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary">삭제하기</a> -->
     </div>
 </div>

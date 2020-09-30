@@ -3,7 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 def validate_studentnumber(value):
     if len(value) != 10:
-        raise ValidationError("학번을 정확히 입력해주세요")
+        if value < 2000000000 and 2020999999 < value :
+            raise ValidationError("학번을 정확히 입력해주세요")
 
 
 def validate_phonenumber(value):

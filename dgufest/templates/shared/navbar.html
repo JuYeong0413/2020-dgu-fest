@@ -2,12 +2,22 @@
 <div class="classynav">
     <ul id="nav">
         <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="#">Pages</a>
+        <!-- <li><a href="#">Pages</a>
             <ul class="dropdown">
                 <li><a href="./">- Home</a></li>
                 <li><a href="{% url 'about' %}">- About</a></li>
                 <li><a href="{% url 'posts:gallery' %}">- Gallery</a></li>
-                <li><a href="{% url 'users:mypage' %}">- My page</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'users:mypage' %}">- My page</a>
+                        <ul class="dropdown">
+                            <li><a href="{% url 'users:mypage' %}">- My page</a></li>
+                            <li><a href="{% url 'posts:like_list' %}">- 좋아요 누른 글</a></li>
+                            <li><a href="{% url 'posts:postlist' %}">- 내가 쓴 글</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'users:mypage' %}">- My page</a></li>
+                {% endif %}
                 <li><a href="./single-blog.html">- Blog Details</a></li>
                 <li><a href="./contact.html">- Contact</a></li>
                 <li><a href="#">- Dropdown</a>
@@ -19,11 +29,21 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'posts:gallery' %}" id="gallery">Gallery</a></li>
-        <li><a href="{% url 'users:mypage' %}">My page</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'users:mypage' %}">My page</a>
+                <ul class="dropdown">
+                    <li><a href="{% url 'users:mypage' %}">- My page</a></li>
+                    <li><a href="{% url 'posts:like_list' %}">- 좋아요 누른 글</a></li>
+                    <li><a href="{% url 'posts:postlist'%}">- 내가 쓴 글</a></li>
+                </ul>
+            </li>
+        {% else %}
+            <li><a href="{% url 'users:mypage' %}">My page</a></li>
+        {% endif %}
+        <!-- <li><a href="./contact.html">Contact</a></li> -->
         {% if user.is_authenticated %}
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
@@ -32,7 +52,5 @@
         {% endif %}
     </ul>
 
-    <!-- Search Icon -->
-    <div class="search-icon" data-toggle="modal" data-target="#searchModal" style="margin-left:20px"><i class="ti-search"></i></div>
 </div>
 <!-- Nav End -->
