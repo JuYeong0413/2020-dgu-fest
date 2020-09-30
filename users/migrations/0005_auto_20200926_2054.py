@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='profile',
             name='phone_number',
-            field=models.PositiveIntegerField(null=True, unique=True, validators=[users.validation.validate_phonenumber], verbose_name='phone number'),
+            field=models.PositiveIntegerField(null=True, unique=True, verbose_name='phone number'),
         ),
         migrations.AlterField(
             model_name='profile',
