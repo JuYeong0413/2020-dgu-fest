@@ -465,6 +465,7 @@ input:required {
     background-color: #fc6060;
     color: #ffffff; }
 
+
 .badges-btn {
   background-color: #ebebeb;
   padding: 5px 15px;
@@ -1691,4 +1692,6 @@ input:required {
     padding-bottom: 100px
   }
 
-
+.select_option {
+  background-color: #f3969a;
+}
