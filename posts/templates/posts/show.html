@@ -3,7 +3,7 @@
 <div class="ajax-text-and-file">
     {% if "video" in post.mediatype %}
         <div id="video-{{post.id}}" style="display: block !important;" class="content file">
-            <video class="col-12" controls >
+            <video class="col-12" controls>
                 <source src="{{post.mediafile.url}}" alt="video">
             </video>
         </div>
