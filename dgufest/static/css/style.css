@@ -1717,13 +1717,13 @@ label.upload-file .btn {
     /* height: 40px; */
     float: left;
     background-color: #ffffff;
-    border: 1px solid #555;
+    border: 1px solid #ebebeb;
     border-radius: 5px;
     content: " ";
     position: relative;
-    color: rgb(0, 0, 0);
+    color: #555;
     position: relative;
-    font-size: 17px;
+    font-size: 15px;
   text-align:center; 
 }
 
