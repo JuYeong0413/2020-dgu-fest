@@ -58,18 +58,18 @@ def update(request, post_id):
         if request.FILES.get('mediafile'):
             post.mediafile = request.FILES.get('mediafile')
             post.mediatype = request.FILES.get('mediafile').content_type
-        post.save()
         
         try:
             post.full_clean()
-            post.save()
 
         except ValidationError as e:
             # title= e.message_dict['title']
             # title = str(title)
             # title = title[2:len(title)-2]
             title = "최대 15자까지 입력 가능합니다."
+
             return render(request, 'posts/new.html', {'title':title })
+        post.save()    
 
         return redirect('posts:gallery')
     return render(request,'posts/update.html',{'post':post})
