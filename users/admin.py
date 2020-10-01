@@ -8,4 +8,5 @@ class PostAdmin(admin.ModelAdmin):
     list_display = (
         "student_id",
         "name",
+        "phone_number",
     )
