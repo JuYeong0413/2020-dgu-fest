@@ -5,10 +5,13 @@ function verifyValues() {
 
 function verifyStudentId() {
   var studentId = document.getElementById('id_student_id').value;
-  if (studentId.length != 10) {
+  if (studentId.length != 10) { // 10자리 확인
     alert("10자리의 학번을 입력해주세요.");
     return false;
-  } else return true;
+  } else if (!studentId.startsWith("20")) { // 20xx으로 시작하는지 확인
+    alert("학번을 확인해주세요.");
+    return false;
+  }else return true;
 }
 
 function verifyPhone() {
