@@ -41,12 +41,12 @@
                                                 </video>
                                                 </div>
                                             <div class="hover-content">
-                                                <a href="#video-{{like.post.id}}" class="video-play-btn">+</a>
+                                                <a href="{% url 'posts:show' like.post.id %}" class="whyrano-video">+</a>
                                             </div>  
                                         {% else %}
                                             <img src ="{{like.post.mediafile.url}}" alt="">
                                             <div class="hover-content">
-                                                <a href="{{like.post.mediafile.url}}" class="portfolio-img">+</a>
+                                                <a href="{% url 'posts:show' like.post.id %}" class="whyrano-img">+</a>
                                             </div>
                                         {% endif %}
                                     
