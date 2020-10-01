@@ -242,4 +242,13 @@
         $.preventDefault();
     });
 
+
+    $(".upload-file input[type='file']").change(function(){
+  
+        // alert("파일 올라감");
+        
+          var fileName = $(this).val().replace(/C:\\fakepath\\/i, '');
+          $(this).parent().parent().find("p").text(fileName);
+      });
+
 })(jQuery);
