@@ -58,11 +58,11 @@
                                     </div>
                                         <a href="{% url 'posts:post_like' post.id %}">
                                             {% if user in post.like_user_set.all %}
-                                                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60;">
+                                                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60; font-size: 25px;">
                                                     <i class="fas fa-heart"></i>
                                                 </a>
                                             {% else %}
-                                                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60;">
+                                                <a href="#" class="like_toggle" data-post-id={{post.id}} style="color:#fd5f60; font-size: 25px;">
                                                     <i class="far fa-heart"></i>
                                                 </a>
                                             {% endif %}
