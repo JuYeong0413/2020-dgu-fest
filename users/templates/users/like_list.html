@@ -32,41 +32,42 @@
                     <div class="row alime-portfolio">
                         {% for like in likes %}
                             <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="100ms" style="display: flex; flex-direction: column-reverse;">
-                                <div class="card">
+                                <div class="card" style="border:none">
                                     <div class="single-portfolio-content">
                                         {% if "video" in like.post.mediatype %}
                                             <div id="video-{{like.post.id}}" style="display: block !important;">
-                                                <video class="col-12" controls >
+                                                <video class="col-12" controls preload="metadata" style="padding:0;" >
                                                     <source src="{{like.post.mediafile.url}}" alt="video">
                                                 </video>
                                                 </div>
                                             <div class="hover-content">
-                                                <a href="#video-{{like.post.id}}" class="video-play-btn">+</a>
+                                                <a href="{% url 'posts:show' like.post.id %}" class="whyrano-video" style="left:30%;">+</a>
+                                                <a href="{% url 'posts:post_like' like.post.id %}" class="like_toggle" data-post-id={{like.post.id}} style="color:white; left:70%; font-size: 25px;">
+                                                    {% if user in like.post.like_user_set.all %} 
+                                                        <i class="fas fa-heart"></i>
+                                                    {% else %}
+                                                        <i class="far fa-heart"></i>
+                                                    {% endif %}
+                                                </a>
                                             </div>  
                                         {% else %}
                                             <img src ="{{like.post.mediafile.url}}" alt="">
                                             <div class="hover-content">
-                                                <a href="{{like.post.mediafile.url}}" class="portfolio-img">+</a>
+                                                <a href="{% url 'posts:show' like.post.id %}" class="whyrano-video" style="left:30%;">+</a>
+                                                <a href="{% url 'posts:post_like' like.post.id %}" class="like_toggle" data-post-id={{like.post.id}} style="color:white; left:70%; font-size: 25px;">
+                                                    {% if user in like.post.like_user_set.all %}
+                                                        <i class="fas fa-heart"></i>
+                                                    {% else %}
+                                                        <i class="far fa-heart"></i>
+                                                    {% endif %}
+                                                </a> 
                                             </div>
                                         {% endif %}
-                                    
                                         <p style="padding-top: 20px; word-break: break-all;">{{like.post.title}}</p>
-
                                         {% if user == like.post.user %}
                                             <span id="count-{{like.post.id}}">좋아요 {{ like.post.like_count }}개</span>
                                         {% endif %}
-                                    </div>
-                                        <a href="{% url 'posts:post_like' like.post.id %}">
-                                            {% if user in like.post.like_user_set.all %}
-                                                <a href="#" class="like_toggle" data-post-id={{like.post.id}}  style="color:#fd5f60;">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                            {% else %}
-                                                <a href="#" class="like_toggle" data-post-id={{like.post.id}}  style="color:#fd5f60;">
-                                                    <i class="far fa-heart"></i>
-                                                </a>
-                                            {% endif %}
-                                        </a>  
+                                    </div>                                        
                                 </div>
                             </div>
                         {% endfor %}
