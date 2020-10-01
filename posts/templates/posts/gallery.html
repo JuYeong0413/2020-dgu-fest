@@ -39,7 +39,7 @@
                     </div>
                     <div class="alime-contact-form mt-20">
                         <div id="select_box" class="col-12 text-left wow fadeInUp form-group" data-wow-delay="800ms">
-                            <select id="sort-select" onchange="location = this.value;" class="form-control col-md-2 mb-2" style="color:black";>
+                            <select id="sort-select" onchange="location = this.value;" class="form-control mt-15" style="color:black";>
                                 {% if "/?sort=random" in request.get_full_path %}
                                     <option class="sort-new" value="?new" >최신순</option>
                                     <option class="sort-random" value="?sort=random" selected>랜덤순</option>
