@@ -16,9 +16,3 @@ def service_terms(request):
 
 def popup(request):
     return render(request, 'popup.html')
-
-def Email(request):
-    email = EmailMessage(
-        'dgufest.com',                # 제목
-    )
-    email.send()
