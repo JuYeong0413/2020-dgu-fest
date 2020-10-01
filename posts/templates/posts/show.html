@@ -16,6 +16,10 @@
     <div class="content text">
         <h3>{{ post.title }}</h3>
         <p>{{ post.content }}</p>
+        {% if user == post.user %}
+            <a href="{% url 'posts:update' post.pk %}" class="btn alime-btn btn-2 mt-15" style="color:white;">수정하기</a>
+            <a href="{% url 'posts:delete' post.pk %}" class="btn alime-btn btn-2 mt-15" style="color:white;">삭제하기</a>
+        {% endif %}
     </div>
 </div>
 

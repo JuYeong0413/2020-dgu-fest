@@ -27,7 +27,7 @@
                     <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="container">
-                            <div class="form-group">
+                            <div class="form-group form-control">
                                 <label>카테고리</label>
                                 <select name="category" id="category">
                                     <option value="pub">주점</option>
