@@ -447,7 +447,7 @@ input:required {
   font-weight: 500;
   display: inline-block;
   padding: 0 30px;
-  text-align-last: center;
+  text-align: center;
   text-transform: capitalize;
   background-color: transparent;
   color: #ffffff;
@@ -464,6 +464,33 @@ input:required {
     box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     background-color: #fc6060;
     color: #ffffff; }
+
+/* select box */
+select {
+  width: 200px;
+  padding: .8em .5em;
+  font-family: inherit;
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;  
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #999;
+  border-radius: 60px;
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms; 
+  text-align-last: center;
+  width: 160px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #fc6060;
+  }
+
+#select_box {
+  padding-left:15px;
+}
+  
 
 .badges-btn {
   background-color: #ebebeb;
@@ -1690,3 +1717,5 @@ input:required {
     padding-top: 50px; 
     padding-bottom: 100px
   }
+
+
