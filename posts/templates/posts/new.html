@@ -27,18 +27,16 @@
                     <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="container">
-                            <form>
-                                <div class="form-group">
-                                    <label>카테고리</label>
-                                    <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
-                                        <option value="pub">주점</option>
-                                        <option value="booth">부스</option>
-                                        <option value="performance">공연</option>
-                                        <option value="etc">기타</option>
-                                    </select>    
-                                </div>
-                            </form>
-                    
+                            <div class="form-group">
+                                <label>카테고리</label>
+                                <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
+                                    <option value="pub">주점</option>
+                                    <option value="booth">부스</option>
+                                    <option value="performance">공연</option>
+                                    <option value="etc">기타</option>
+                                </select>    
+                            </div>
+\                    
                         </div>
                             <div class="col-12">
                                 <label>제목</label>
