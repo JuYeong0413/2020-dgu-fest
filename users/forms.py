@@ -5,9 +5,9 @@ from .validation import *
 from django.contrib.auth.models import User
 
 class MyCustomSignupForm(SignupForm):
-    name = forms.CharField(max_length=10, label='이름')
-    student_id = forms.IntegerField(label='학번')
-    phone_number = forms.IntegerField(label='핸드폰번호')
+    name = forms.CharField(max_length=10, label='이름', widget=forms.TextInput(attrs={'placeholder': '이름'}))
+    student_id = forms.IntegerField(label='학번', widget=forms.TextInput(attrs={'placeholder': '10자리 학번'}))
+    phone_number = forms.IntegerField(label='핸드폰번호', widget=forms.TextInput(attrs={'placeholder': '숫자만 입력해주세요.'}))
 
     def save(self, request):
         user = super(MyCustomSignupForm, self).save(request)
