@@ -1598,7 +1598,7 @@ input:required {
     .single-portfolio-content .hover-content a {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 100%;
       margin-top: 0;
       margin-left: -26px;
       z-index: 100;
@@ -1611,7 +1611,7 @@ input:required {
       line-height: 52px;
       font-size: 30px;
       color: #ffffff; }
-      .single-portfolio-content .hover-content a:hover, .single-portfolio-content .hover-content a:focus {
+      .single-portfolio-content .hover-content a:hover {
         background-color: #000000; }
   .single-portfolio-content:hover img, .single-portfolio-content:focus img {
     -webkit-transform: scale(1.2);
@@ -1673,7 +1673,7 @@ input:required {
   #allauth {
     text-align: center;
     padding-top: 50px; 
-    padding-bottom: 100px
+    padding-bottom: 100px 
   }
 
 #new{
