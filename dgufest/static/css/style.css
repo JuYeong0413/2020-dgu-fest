@@ -457,13 +457,48 @@ input:required {
   -o-transition-duration: 500ms;
   transition-duration: 500ms; }
   .alime-btn.btn-2 {
-    color: #252525; }
+    color: #252525;}
   .alime-btn:focus, .alime-btn:hover {
     font-weight: 500;
     -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     background-color: #fc6060;
     color: #ffffff; }
+
+/* select box */
+#sort-select {
+  width: 200px;
+  padding: .8em .5em;
+  font-family: inherit;
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms; 
+  text-align-last: center;
+  width: 160px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #fc6060;
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;  
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+  border-radius: 60px;
+
+}
+
+#select_box {
+  padding-left:15px;
+}
+
+#category{
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;  
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+
+}
+  
 
 .badges-btn {
   background-color: #ebebeb;
