@@ -3,8 +3,7 @@ from .models import *
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from posts.models import Like
-from posts.models import Post
+from posts.models import Like, Post
 
 def mypage(request):
     return render(request, 'users/mypage.html')
