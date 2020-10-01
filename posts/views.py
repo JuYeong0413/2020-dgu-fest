@@ -5,7 +5,7 @@ from django.http import HttpResponse
 import json, pdb
 from django.core.paginator import Paginator
 from django.db.models import Count
-# Create your views here.
+from django.core.exceptions import ValidationError
 
 def gallery(request):
     posts=Post.objects.all().order_by('-created_at')
@@ -32,7 +32,20 @@ def create(request):
         mediafile = request.FILES.get('mediafile')
         mediatype = mediafile.content_type
         user = request.user
-        Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype, user=user)
+        post = Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype, user=user)
+        try:
+            post.full_clean()
+            post.save()
+
+        except ValidationError as e:
+            # title= e.message_dict['title']
+            # title = str(title)
+            # title = title[2:len(title)-2]
+            title = "최대 15자까지 입력 가능합니다."
+            post.delete()
+            return render(request, 'posts/new.html', {'title':title })
+
+
     return redirect('posts:gallery')
 
 @login_required
@@ -45,7 +58,19 @@ def update(request, post_id):
         if request.FILES.get('mediafile'):
             post.mediafile = request.FILES.get('mediafile')
             post.mediatype = request.FILES.get('mediafile').content_type
-        post.save()
+        
+        try:
+            post.full_clean()
+
+        except ValidationError as e:
+            # title= e.message_dict['title']
+            # title = str(title)
+            # title = title[2:len(title)-2]
+            title = "최대 15자까지 입력 가능합니다."
+
+            return render(request, 'posts/new.html', {'title':title })
+        post.save()    
+
         return redirect('posts:gallery')
     return render(request,'posts/update.html',{'post':post})
 
@@ -76,5 +101,4 @@ def post_like(request, post_id):
     }
 
     return HttpResponse(json.dumps(context), content_type="application/json")
-
 
