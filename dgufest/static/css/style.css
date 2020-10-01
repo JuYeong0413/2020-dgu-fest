@@ -457,13 +457,48 @@ input:required {
   -o-transition-duration: 500ms;
   transition-duration: 500ms; }
   .alime-btn.btn-2 {
-    color: #252525; }
+    color: #252525;}
   .alime-btn:focus, .alime-btn:hover {
     font-weight: 500;
     -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
     background-color: #fc6060;
     color: #ffffff; }
+
+/* select box */
+#sort-select {
+  width: 200px;
+  padding: .8em .5em;
+  font-family: inherit;
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms; 
+  text-align-last: center;
+  width: 160px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #fc6060;
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;  
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+  border-radius: 60px;
+
+}
+
+#select_box {
+  padding-left:15px;
+}
+
+#category{
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;  
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+
+}
+  
 
 .badges-btn {
   background-color: #ebebeb;
@@ -1673,9 +1708,66 @@ input:required {
   #allauth {
     text-align: center;
     padding-top: 50px; 
-    padding-bottom: 100px
+    padding-bottom: 100px 
   }
 
 #new{
   padding-top:50px;
+}
+
+*{padding:0; margin:0; box-sizing:border-box;}
+ul, ol, li{width:100%; list-style:none; text-align:center;}
+li{margin-top:30px;}
+strong{display:block; width: 370px; margin: auto; margin-bottom:10px; text-align: left;}
+
+label.upload-file:after{
+  clear:both; display:block; content:"";
+}
+
+label.upload-file {
+  display:inline-block; margin:auto;
+    vertical-align: middle;
+    font-size: 17px;
+    color: #000000;
+}
+
+label.upload-file p {
+    width: 260px;
+    height: 40px;
+    float: left;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background: #ffffff;
+    text-indent: 10px;
+    font-size: 17px;
+    padding: 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+label.upload-file .btn {
+    width: 100;
+    /* padding-bottom: 50px; */
+    /* height: 40px; */
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    content: " ";
+    position: relative;
+    color: #555;
+    position: relative;
+    font-size: 15px;
+  text-align:center; 
+}
+
+label.upload-file input[type="file"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
 }

@@ -29,7 +29,7 @@
                         <div class="container">
                             <div class="form-group">
                                 <label>카테고리</label>
-                                <select name="category" id="category">
+                                <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
                                     {% if post.category == 'pub' %}
                                         <option value="pub" selected>주점</option>
                                         <option value="booth" >부스</option>
@@ -59,27 +59,39 @@
                         </div>
 
                         <div class="col-12">
-                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}", placeholder="제목 입력" required>
+                            <label>제목</label>
+                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}", placeholder="제목 입력" required style="color:black;">
                         </div>
                         <div class="col-12">
-                            <textarea class="form-control mb-30" name="content" placeholder="내용 입력">{{ post.content }}</textarea>
+                            <label>내용</label>
+                            <textarea class="form-control mb-30" name="content" placeholder="내용 입력" style="color:black;">{{ post.content }} </textarea>
+                        </div>
+                        <div class="col-12">
+                            <label for="uploadFile" class="upload-file" >
+                                <div class="btn btn-outline">파일 선택<input type="file" name="mediafile" onchange="fileCheck(this)" accept="post.mediafile"></div>
+                                <p id="onlyFileName">{{ post.mediafile }}</p><!-- 업로드파일명 -->
+                            </label>
                         </div>
                         <div class="col-12">  
-                            <input type="file" name="mediafile" onchange="limitSize(this)" accept="post.mediafile" >
+                            <div id="content">
+                                {% if "video" in post.mediatype %}
+                                    <video class="col-12" controls preload="auto" style="width: 50%" id="show-video-tag">
+                                        <source src="{{post.mediafile.url}}" alt="video">
+                                    </video>
+                                {% elif "image" in post.mediatype %}
+                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="" id="show-image-tag">
+                                {% endif %} 
+                            </div>
                         </div>
-                
-
                         <div class="col-12">
                             <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 <!-- Comment Area End -->
-
 {% endblock %}
    
