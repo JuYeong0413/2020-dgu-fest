@@ -8,5 +8,6 @@ def validate_studentnumber(value):
 
 
 def validate_phonenumber(value):
-        if len(value) !=11:
-            raise ValidationError("올바른 번호를 입력해주세요")
+    if len(value) !=11:
+        # if value < 01000000000 and 01099999999 < value :
+        raise ValidationError("올바른 번호를 입력해주세요")

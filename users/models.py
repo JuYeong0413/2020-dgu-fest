@@ -10,14 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='name', max_length=10)
     student_id = models.PositiveIntegerField(null=True)
-    birth_date = models.DateTimeField(verbose_name='birth_date', null=True, blank=True)
-    
-    GENDER_CHOICES ={
-        ('F', 'Female'),
-        ('M', 'Male'),
-    }
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True)
-    phone_number = models.PositiveIntegerField(verbose_name='phone number', unique=True, null=True)
+    phone_number = models.CharField(max_length=11, unique=True, null=True)
 
     
     
