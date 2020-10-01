@@ -46,10 +46,12 @@
                             </div>
                             <div class="col-12">
                                 <label for="uploadFile" class="upload-file" >
-                                    <div class="btn btn-outline">파일 선택<input type="file" id="input-mediafile"  name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required></div>
+                                    <div class="btn btn-outline">파일 선택<input type="file" id="input-mediafile"  name="mediafile" onchange="fileCheck(this)" accept="image/*, video/*" required></div>
                                     <p></p><!-- 업로드파일명 -->
-                                    <div id="content"></div>
                                 </label>
+                            </div>
+                            <div class="col-12">
+                                <div id="content"></div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
@@ -63,5 +65,4 @@
     </div>
 </div>
 <!-- Comment Area End -->
-
 {% endblock %}
