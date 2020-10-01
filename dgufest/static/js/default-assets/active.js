@@ -242,4 +242,11 @@
         $.preventDefault();
     });
 
+
+    $(".upload-file input[type='file']").change(function(){        
+          var fileName = $(this).val().replace(/C:\\fakepath\\/i, '');
+          $(this).parent().parent().find("p").text(fileName);
+      });
+
+
 })(jQuery);
