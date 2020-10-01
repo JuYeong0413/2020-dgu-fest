@@ -36,7 +36,6 @@
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <p style="color: red; font-weight: bolder;">※ 이메일은 학생인증을 위해 학교 웹메일로 작성해주세요. ※</p>
         <p style="color: black; font-weight: bolder;">회원가입 시 해당 사이트의 <a href="{% url 'service_terms' %}">서비스 이용약관</a> 및 <a href="{% url 'personal_data' %}">개인정보처리방침</a>을 확인하였으며, 동의합니다.</p>
             <div class="col-12" data-wow-delay="800ms">
                 <button type="submit" class="btn alime-btn btn-2 mt-15">{% trans 'Sign Up' %}</button>
