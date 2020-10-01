@@ -1633,7 +1633,7 @@ input:required {
     .single-portfolio-content .hover-content a {
       position: absolute;
       top: 50%;
-      left: 100%;
+      left: 50%;
       margin-top: 0;
       margin-left: -26px;
       z-index: 100;
