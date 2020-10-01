@@ -39,36 +39,44 @@
                         </div>
 
                         <div class="col-12">
-                            <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required style="color:black;" value = "{{ title }}">
+                            <label>제목</label>
+                            <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required style="color:black;" value="{{ title }}">
                         </div>
                         <div class="col-12">
+                            <label>내용</label>
                             <textarea class="form-control mb-30" name="content" placeholder="내용 입력" style="color:black;"></textarea>
                         </div>
                         <div class="col-12">
-                            <label for="input-mediafile" class="btn btn-outline" style="border: 1px solid #80808042;">파일 선택</label>
-                            <input type="file" id="input-mediafile" style="display: none;" name="mediafile" onchange="limitSize(this)" accept="image/*, video/*" required>
+                            <label for="uploadFile" class="upload-file" >
+                                <div class="btn btn-outline">파일 선택<input type="file" id="input-mediafile"  name="mediafile" onchange="fileCheck(this)" accept="image/*, video/*" required></div>
+                                <p></p><!-- 업로드파일명 -->
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <div id="content"></div>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
                         </div>
                     </form>
+                    </form>
                     {% else %}
                         <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="container">
-                                <div >
+                                <div>
                                     <label>카테고리</label>
-                                    <select name="category" id="category">
+                                    <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
                                         <option value="pub">주점</option>
                                         <option value="booth">부스</option>
                                         <option value="performance">공연</option>
                                         <option value="etc">기타</option>
-                                    </select>
-                                </div>
+                                    </select>    
+                                </div>                    
                             </div>
                             <div class="col-12">
                                 <label>제목</label>
-                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required style="color:black;">
+                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력(최대 15자)" required style="color:black;">
                             </div>
                             <div class="col-12">
                                 <label>내용</label>
