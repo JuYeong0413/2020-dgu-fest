@@ -33,7 +33,6 @@ def create(request):
         mediatype = mediafile.content_type
         user = request.user
         post = Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype, user=user)
-        
         try:
             post.full_clean()
             post.save()
@@ -43,7 +42,9 @@ def create(request):
             # title = str(title)
             # title = title[2:len(title)-2]
             title = "최대 15자까지 입력 가능합니다."
+            post.delete()
             return render(request, 'posts/new.html', {'title':title })
+
 
     return redirect('posts:gallery')
 
