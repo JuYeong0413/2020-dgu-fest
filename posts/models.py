@@ -11,7 +11,7 @@ class Post(models.Model):
 
     category = models.CharField(choices=POST_CATEGORY_CHOICES, max_length=300)
     mediatype = models.CharField(max_length=300)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=15)
     content = models.TextField(blank=True)
     mediafile = models.FileField(upload_to='mediafiles/')
     created_at = models.DateTimeField(auto_now_add = True)
