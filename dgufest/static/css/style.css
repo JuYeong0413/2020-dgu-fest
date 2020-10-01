@@ -1716,7 +1716,7 @@ input:required {
 }
 
 *{padding:0; margin:0; box-sizing:border-box;}
-ul, ol, li{width:100%; list-style:none; text-align:center;}
+ul, ol, li{list-style:none; text-align:center;}
 li{margin-top:30px;}
 strong{display:block; width: 370px; margin: auto; margin-bottom:10px; text-align: left;}
 
