@@ -70,6 +70,17 @@
                                 <p>{{post.mediafile}}</p><!-- 업로드파일명 -->
                             </label>
                         </div>
+                        <div class="col-12">  
+                            <div id="content">
+                                {% if "video" in post.mediatype %}
+                                    <video class="col-12" controls preload="auto" style="width: 50%" id="show-video-tag">
+                                        <source src="{{post.mediafile.url}}" alt="video">
+                                    </video>
+                                {% elif "image" in post.mediatype %}
+                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="" id="show-image-tag">
+                                {% endif %} 
+                            </div>
+                        </div>
                         <div class="col-12">
                             <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
                         </div>
