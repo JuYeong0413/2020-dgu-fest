@@ -31,8 +31,8 @@
         <p>{% blocktrans with confirmation.email_address.email as email %}<a href="mailto:{{ email }}" style="color :#fc6060">{{ email }}</a>이 {{ user_display }}님의 이메일임을 확인해주세요.{% endblocktrans %}</p>
         <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
         {% csrf_token %}
-        <div id="submit">
-            <button type="submit" id="submit">{% trans '이메일 인증' %}</button>
+        <div class="col-12" data-wow-delay="800ms">
+            <button type="submit" class="btn alime-btn btn-2 mt-15">{% trans '이메일 인증' %}</button>
         </div>
         </form>
     {% else %}

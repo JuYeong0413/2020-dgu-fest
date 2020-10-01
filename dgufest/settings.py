@@ -152,8 +152,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'dgufest', 'media')
 
 
 #account_email
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+ACCOUNT_FORMS = {'signup': 'users.forms.MyCustomSignupForm'}
 
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_OPEN = True # 기본값

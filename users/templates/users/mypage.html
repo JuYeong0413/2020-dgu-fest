@@ -11,7 +11,7 @@
                     <h2 class="page-title">My page</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="#"><i class="icon_house_alt"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="icon_house_alt"></i> Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">My page</li>
                         </ol>
                     </nav>
@@ -27,38 +27,50 @@
     <div class="container">
         <div class="row">
             {% if user.is_authenticated %}
-                <div class="section-heading text-center col-12">
-                    <h2 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30>내 프로필</h2>
+                <div class="col-12 col-lg-6">
+                    <h2 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30 style="margin-left:200px">내 프로필</h2>
+                    <a href="{% url 'users:password_change' %}" class="btn alime-btn btn-2 mt-15" style="margin-left:190px">비밀번호 변경</a>
                 </div>
+                <br><br><br><br>
 
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-3">
+                <div style="margin-left:100px">
+                    <div class="col-12">
                         <!-- Contact Info -->
                             <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
-                                <p>ID</p>
+                                <p style="font-weight:bolder">아이디</p>
                                 <a>{{user}}</a>
                             </div>
                         <!-- Contact Info -->
                     </div>
+                    <br><br>
 
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12">
                         <!-- Contact Info -->
                         <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
-                                <p>Email</p>
+                                <p style="font-weight:bolder">이메일</p>
                                 <a>{{user.email}}</a>
                         </div>
                     </div>
-                </div>
-                
+                    <br><br>
 
-                <!-- Contact Info -->
-                
-                <!-- Contact Info -->
-                <div class="col-12 text-center">
-                    <div class="col-12 wow fadeInUp" data-wow-delay="800ms">
-                        <a href="{% url 'users:password_change' %}" class="btn alime-btn btn-2 mt-15">비밀번호 변경</a>
+                    <div class="col-12">
+                        <!-- Contact Info -->
+                        <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
+                                <p style="font-weight:bolder">이름</p>
+                                <a>{{user.profile.name}}</a>
+                        </div>
                     </div>
+                    <br><br>
+
+                        <div class="col-12">
+                        <!-- Contact Info -->
+                        <div class="wow fadeInUp" data-wow-delay="100ms" contact-info mb-30>
+                                <p style="font-weight:bolder">학번</p>
+                                <a>{{user.profile.student_id}}</a>
+                        </div>
+                        <br><br>
                 </div>
+        </div>
 
             {% else %}
                 <div class="col-12 text-center">

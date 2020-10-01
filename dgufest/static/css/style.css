@@ -1697,25 +1697,12 @@ select {
 /*# sourceMappingURL=style.css.map */
 
 /*allauth-css*/
- #submit{
-    border-top-left-radius:5px;
-    border-bottom-left-radius:5px;
-    border-top-right-radius:5px;
-    border-bottom-right-radius:5px;
-    padding:5px;
-  }
-  #submit button{
-      border: 1px solid gray;
-      background-color: transparent;
-  }
-  #submit button:hover{
-      background-color:#fc6060;
-  }
-
   #allauth {
     text-align: center;
     padding-top: 50px; 
     padding-bottom: 100px
   }
 
-
+#new{
+  padding-top:50px;
+}
