@@ -25,7 +25,7 @@ def new(request):
 
 @login_required
 def create(request):
-    if request.method == "POST":
+    if request.method == "POST" or "FILES":
         category = request.POST.get('category')
         title = request.POST.get('title')
         content = request.POST.get('content')
@@ -33,6 +33,7 @@ def create(request):
         mediatype = mediafile.content_type
         user = request.user
         post = Post.objects.create(category=category, title=title, content=content, mediafile=mediafile, mediatype=mediatype, user=user)
+        
         try:
             post.full_clean()
             post.save()
@@ -41,9 +42,9 @@ def create(request):
             # title= e.message_dict['title']
             # title = str(title)
             # title = title[2:len(title)-2]
-            title = "최대 15자까지 입력 가능합니다."
-            post.delete() 
-            return render(request, 'posts/new.html', {'title':title })   
+            title = "공백 포함 최대 15자까지 입력 가능합니다."
+            post.delete()
+            return render(request, 'posts/new.html', {'title':title, 'post':post})
 
     return redirect('posts:gallery')
 

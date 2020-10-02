@@ -30,35 +30,63 @@
                             <div>
                                 <label>카테고리</label>
                                 <select name="category" id="category" class="form-control col-md-2 mb-2" style="color:black">
-                                    <option value="pub">주점</option>
-                                    <option value="booth">부스</option>
-                                    <option value="performance">공연</option>
-                                    <option value="etc">기타</option>
-                                </select>    
+                                    {% if post.category == 'pub' %}
+                                        <option value="pub" selected>주점</option>
+                                        <option value="booth" >부스</option>
+                                        <option value="performance" >공연</option>
+                                        <option value="etc" >기타</option>
+                                    
+                                    {% elif post.category == 'booth' %}   
+                                        <option value="pub" >주점</option>
+                                        <option value="booth" selected>부스</option>
+                                        <option value="performance" >공연</option>
+                                        <option value="etc" >기타</option>
+
+                                    {% elif post.category == 'performance' %}   
+                                        <option value="pub" >주점</option>
+                                        <option value="booth" >부스</option>
+                                        <option value="performance"selected >공연</option>
+                                        <option value="etc" >기타</option>
+
+                                    {% elif post.category == 'etc' %}   
+                                        <option value="pub" >주점</option>
+                                        <option value="booth" >부스</option>
+                                        <option value="performance" >공연</option>
+                                        <option value="etc" selected>기타</option>
+                                    {% endif %}
+                                </select>
                             </div>                    
                         </div>
 
                         <div class="col-12">
                             <label>제목</label>
-                            <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력" required style="color:black;" value="{{ title }}">
+                            <p style="color:#fc6060;">{{ title }}</p>
+                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}" placeholder="제목 입력" required style="color:black;">
                         </div>
                         <div class="col-12">
                             <label>내용</label>
-                            <textarea class="form-control mb-30" name="content" placeholder="내용 입력" style="color:black;"></textarea>
+                            <textarea class="form-control mb-30" name="content" placeholder="내용 입력" style="color:black;">{{ post.content }} </textarea>
                         </div>
                         <div class="col-12">
                             <label for="uploadFile" class="upload-file" >
-                                <div class="btn btn-outline">파일 선택<input type="file" id="input-mediafile"  name="mediafile" onchange="fileCheck(this)" accept="image/*, video/*" required></div>
-                                <p></p><!-- 업로드파일명 -->
+                                <div class="btn btn-outline">파일 선택<input type="file" name="mediafile" onchange="fileCheck(this)" accept="post.mediafile"></div>
+                                <p id="onlyFileName">{{ post.mediafile }}</p><!-- 업로드파일명 -->
                             </label>
                         </div>
-                        <div class="col-12">
-                            <div id="content"></div>
+                        <div class="col-12">  
+                            <div id="content">
+                                {% if "video" in post.mediatype %}
+                                    <video class="col-12" controls preload="auto" style="width: 50%" id="show-video-tag">
+                                        <source src="{{post.mediafile.url}}" alt="video">
+                                    </video>
+                                {% elif "image" in post.mediatype %}
+                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="" id="show-image-tag">
+                                {% endif %} 
+                            </div>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn alime-btn btn-2 mt-15">Upload</button>
                         </div>
-                    </form>
                     </form>
                     {% else %}
                         <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
@@ -76,7 +104,7 @@
                             </div>
                             <div class="col-12">
                                 <label>제목</label>
-                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력(최대 15자)" required style="color:black;">
+                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력(공백 포함 최대 15자)" required style="color:black;">
                             </div>
                             <div class="col-12">
                                 <label>내용</label>
