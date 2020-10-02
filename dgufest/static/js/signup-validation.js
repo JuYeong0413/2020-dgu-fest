@@ -19,5 +19,7 @@ function verifyPhone() {
   if (phoneNumber.length != 11) {
     alert("핸드폰번호를 확인해주세요.");
     return false;
+  } else if (!phoneNumber.unique) {
+    alert("이미 가입 된 번호입니다.");
   } else return true;
 }
