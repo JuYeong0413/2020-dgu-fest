@@ -961,12 +961,16 @@ input:required {
   -o-transition-duration: 800ms;
   transition-duration: 800ms;
   background-color: #ffffff;
-  padding: 80px 30px 50px;
+  padding: 80px 10px 50px;
   border-radius: 10px;
   box-shadow: 3px 0 15px -1px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 1;
-  margin-top: 50px; }
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 315px;
+  height: 500px;}
   .why-choose-us-content .chosse-us-icon {
     -webkit-transition-duration: 800ms;
     -o-transition-duration: 800ms;
