@@ -42,9 +42,8 @@ def create(request):
             # title = str(title)
             # title = title[2:len(title)-2]
             title = "최대 15자까지 입력 가능합니다."
-            post.delete()
-            return render(request, 'posts/new.html', {'title':title })
-
+            post.delete() 
+            return render(request, 'posts/new.html', {'title':title })   
 
     return redirect('posts:gallery')
 
@@ -68,7 +67,7 @@ def update(request, post_id):
             # title = title[2:len(title)-2]
             title = "최대 15자까지 입력 가능합니다."
 
-            return render(request, 'posts/new.html', {'title':title })
+            return render(request, 'posts/update.html', {'title':title, 'post':post})
         post.save()    
 
         return redirect('posts:gallery')
