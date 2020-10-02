@@ -12,3 +12,12 @@ class PostAdmin(admin.ModelAdmin):
         "category",
         "mediafile",
     )
+
+
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
+    list_display = (
+        "user",
+        "post",
+        "created_at",
+    )
