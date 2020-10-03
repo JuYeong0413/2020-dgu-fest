@@ -44,7 +44,7 @@
         <p>{{ post.content }}</p>
         {% if user == post.user %}
             <a href="{% url 'posts:update' post.pk %}" class="btn alime-btn btn-2 mt-15" style="color:white;">수정하기</a>
-            <a href="{% url 'posts:delete' post.pk %}" class="btn alime-btn btn-2 mt-15" style="color:white;">삭제하기</a>
+            <a href="{% url 'posts:delete' post.pk %}" class="btn alime-btn btn-2 mt-15" style="color:white;" onclick="return confirm('정말로 삭제하시겠습니까? 삭제한 글은 복구할 수 없습니다.');">삭제하기</a>
         {% endif %}
     </div>
 </div>
