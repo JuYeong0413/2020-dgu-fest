@@ -137,10 +137,10 @@
                             <div id="content">
                                 {% if "video" in post.mediatype %}
                                     <video class="col-12" controls preload="auto" style="width: 50%" id="show-video-tag">
-                                        <source src="{{post.mediafile.url}}" alt="video">
+                                        <source src="{{ post.mediafile.url }}" alt="video">
                                     </video>
                                 {% elif "image" in post.mediatype %}
-                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="image" id="show-image-tag">
+                                    <img src="{{ post.mediafile.url }}" style="width: 50%" alt="image" id="show-image-tag">
                                 {% endif %} 
                             </div>
                         </div>
