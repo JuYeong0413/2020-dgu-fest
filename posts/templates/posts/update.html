@@ -24,7 +24,7 @@
                     <h4 class="mb-30">사진/영상 업로드</h4>
                 {% if title %}
                     <!-- Form -->
-                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
+                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return checktitle()">
                         {% csrf_token %}
                         <div class="container">
                             <div class="form-group">
@@ -89,7 +89,7 @@
                         </div>
                     </form>
                     {% else %}
-                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
+                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return checktitle()">
                         {% csrf_token %}
                         <div class="container">
                             <div class="form-group">
