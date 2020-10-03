@@ -22,6 +22,7 @@
                     <!-- Form -->
                     <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return checkTitle()">
                         {% csrf_token %}
+                        <input type="hidden" name="redirect" value="{{ redirect_to }}">
                         <div class="container">
                             <div class="form-group">
                                 <label>카테고리</label>
@@ -87,6 +88,7 @@
                     {% else %}
                     <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return checkTitle()">
                         {% csrf_token %}
+                        <input type="hidden" name="redirect" value="{{ redirect_to }}">
                         <div class="container">
                             <div class="form-group">
                                 <label>카테고리</label>

@@ -41,7 +41,7 @@
                                                 </video>
                                             </div>
                                             <div class="hover-content">
-                                                <a href="{% url 'posts:show' post.id %}" class="whyrano-video" style="left:30%;">+</a>
+                                                <a href="{% url 'posts:show' post.id %}?redirect=posts" class="whyrano-video" style="left:30%;">+</a>
                                                 <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{ post.id }} style="color:white; left:70%; font-size: 25px;">
                                                     {% if user in post.like_user_set.all %}
                                                         <i class="fas fa-heart"></i>
@@ -53,7 +53,7 @@
                                         {% else %}
                                             <img src ="{{ post.mediafile.url }}" alt="image">
                                             <div class="hover-content">
-                                                <a href="{% url 'posts:show' post.id %}" class="whyrano-video" style="left:30%;">+</a>
+                                                <a href="{% url 'posts:show' post.id %}?redirect=posts" class="whyrano-video" style="left:30%;">+</a>
                                                 <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{ post.id }} style="color:white; left:70%; font-size: 25px;">
                                                     {% if user in post.like_user_set.all %}
                                                         <i class="fas fa-heart"></i>

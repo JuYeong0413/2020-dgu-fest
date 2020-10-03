@@ -51,8 +51,10 @@ def create(request):
 @login_required
 def update(request, post_id):
     post = get_object_or_404(Post,pk=post_id)
+    redirect_to = request.GET.get('redirect')
     if post.user == request.user:
         if request.method == "POST":
+            redirect_to = request.POST.get('redirect')
             post.category = request.POST['category']
             post.title = request.POST['title']
             post.content = request.POST['content']
@@ -69,25 +71,38 @@ def update(request, post_id):
                 # title = title[2:len(title)-2]
                 title = "최대 15자까지 입력 가능합니다."
 
-                return render(request, 'posts/update.html', {'title':title, 'post':post})
+                return render(request, 'posts/update.html', {'title':title, 'post':post, 'redirect_to': redirect_to})
             post.save()
 
-            return redirect('posts:gallery')
+            if redirect_to == "posts":
+                return redirect('users:postlist')
+            elif redirect_to == "likes":
+                return redirect('users:like_list')
+            else:
+                return redirect('posts:gallery')
         else:
-            return render(request,'posts/update.html',{'post':post})
+            return render(request,'posts/update.html',{'post':post, 'redirect_to':redirect_to})
     else:
         return redirect('posts:gallery')
 
 @login_required
 def delete(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
+    redirect_to = request.GET.get('redirect')
     if post.user == request.user:
         post.delete()
-    return redirect("posts:gallery")
+    
+    if redirect_to == "posts":
+        return redirect('users:postlist')
+    elif redirect_to == "likes":
+        return redirect('users:like_list')
+    else:
+        return redirect("posts:gallery")
 
 def show(request, id):
     post = Post.objects.get(pk=id)
-    return render(request, 'posts/show.html', {'post': post})
+    redirect_to = request.GET.get('redirect')
+    return render(request, 'posts/show.html', {'post': post, 'redirect_to': redirect_to})
     
 @login_required
 def post_like(request, post_id):
