@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-import json, pdb
+import json
 from django.core.paginator import Paginator
 from django.db.models import Count
 from django.core.exceptions import ValidationError
 
 def gallery(request):
     posts=Post.objects.all().order_by('-created_at')
-    sort = request.GET.get('sort','') 
+    sort = request.GET.get('sort','')
     # paginator = Paginator(posts, 50)
     # page = request.GET.get('page')
     # posts = paginator.get_page(page)
