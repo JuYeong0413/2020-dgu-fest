@@ -3,5 +3,3 @@ var mediafile =  document.getElementById("onlyFileName").innerHTML;
     var mediaArray = mediafile.split('/');
     document.getElementById("onlyFileName").innerHTML = mediaArray[1];
 })()
-
-  
