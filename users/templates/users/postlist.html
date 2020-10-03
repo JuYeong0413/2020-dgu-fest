@@ -104,7 +104,7 @@
             const postId = likeButton.data('post-id');
             const heartIcon = likeButton.find('i')
             $.ajax({
-                url: `/posts/${postId}/post_like/`,
+                url: `/gallery/${postId}/post_like/`,
                 data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
                 type: "POST",
                 success: function(response) {
