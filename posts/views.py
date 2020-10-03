@@ -51,34 +51,39 @@ def create(request):
 @login_required
 def update(request, post_id):
     post = get_object_or_404(Post,pk=post_id)
-    if request.method == "POST":
-        post.category = request.POST['category']
-        post.title = request.POST['title']
-        post.content = request.POST['content']
-        if request.FILES.get('mediafile'):
-            post.mediafile = request.FILES.get('mediafile')
-            post.mediatype = request.FILES.get('mediafile').content_type
-        
-        try:
-            post.full_clean()
+    if post.user == request.user:
+        if request.method == "POST":
+            post.category = request.POST['category']
+            post.title = request.POST['title']
+            post.content = request.POST['content']
+            if request.FILES.get('mediafile'):
+                post.mediafile = request.FILES.get('mediafile')
+                post.mediatype = request.FILES.get('mediafile').content_type
+            
+            try:
+                post.full_clean()
 
-        except ValidationError as e:
-            # title= e.message_dict['title']
-            # title = str(title)
-            # title = title[2:len(title)-2]
-            title = "최대 15자까지 입력 가능합니다."
+            except ValidationError as e:
+                # title= e.message_dict['title']
+                # title = str(title)
+                # title = title[2:len(title)-2]
+                title = "최대 15자까지 입력 가능합니다."
 
-            return render(request, 'posts/update.html', {'title':title, 'post':post})
-        post.save()    
+                return render(request, 'posts/update.html', {'title':title, 'post':post})
+            post.save()
 
+            return redirect('posts:gallery')
+        else:
+            return render(request,'posts/update.html',{'post':post})
+    else:
         return redirect('posts:gallery')
-    return render(request,'posts/update.html',{'post':post})
 
 @login_required
-def delete(request, post_id): 
-	post = get_object_or_404(Post, pk=post_id) 
-	post.delete()
-	return redirect("posts:gallery")
+def delete(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if post.user == request.user:
+        post.delete()
+    return redirect("posts:gallery")
 
 def show(request, id):
     post = Post.objects.get(pk=id)
@@ -101,4 +106,3 @@ def post_like(request, post_id):
     }
 
     return HttpResponse(json.dumps(context), content_type="application/json")
-
