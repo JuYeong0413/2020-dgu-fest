@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'dgufest', 'static')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files
 
