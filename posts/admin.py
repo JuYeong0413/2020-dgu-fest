@@ -35,6 +35,7 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(Like)
 class LikeAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "user",
         "post",
         "created_at",
