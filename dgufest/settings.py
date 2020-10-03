@@ -151,7 +151,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'dgufest', 'media')
 
 
-#account_email
+# account_email
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
@@ -160,3 +160,4 @@ ACCOUNT_FORMS = {'signup': 'users.forms.MyCustomSignupForm'}
 
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_OPEN = True # 기본값
+ACCOUNT_SESSION_REMEMBER = False # 아이디 저장 필드 제외
