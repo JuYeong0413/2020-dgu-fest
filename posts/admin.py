@@ -6,11 +6,13 @@ from .models import *
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
+        "user",
         "category",
         "title",
         "content",
-        "category",
         "mediafile",
+        "like_count",
     )
 
 
