@@ -24,7 +24,7 @@
                     <h4 class="mb-30">사진/영상 업로드</h4>
                 {% if title %}        
                     <!-- Form -->
-                    <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
+                    <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
                         {% csrf_token %}
                         <div class="container">
                             <div>
@@ -61,7 +61,7 @@
                         <div class="col-12">
                             <label>제목</label>
                             <p style="color:#fc6060;">{{ title }}</p>
-                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}" placeholder="제목 입력" required style="color:black;">
+                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}" placeholder="제목 입력" id="title_id" maxlength="15" required style="color:black;">
                         </div>
                         <div class="col-12">
                             <label>내용</label>
@@ -89,7 +89,7 @@
                         </div>
                     </form>
                     {% else %}
-                        <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data">
+                        <form action="{% url 'posts:create' %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
                             {% csrf_token %}
                             <div class="container">
                                 <div>
@@ -104,7 +104,7 @@
                             </div>
                             <div class="col-12">
                                 <label>제목</label>
-                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력(공백 포함 최대 15자)" required style="color:black;">
+                                <input type="text" class="form-control mb-30" name="title" placeholder="제목 입력(공백 포함 최대 15자)" id="title_id"  maxlength="15" required style="color:black;">
                             </div>
                             <div class="col-12">
                                 <label>내용</label>

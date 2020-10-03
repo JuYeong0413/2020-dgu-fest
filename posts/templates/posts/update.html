@@ -24,7 +24,7 @@
                     <h4 class="mb-30">사진/영상 업로드</h4>
                 {% if title %}
                     <!-- Form -->
-                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data">
+                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
                         {% csrf_token %}
                         <div class="container">
                             <div class="form-group">
@@ -61,7 +61,7 @@
                         <div class="col-12">
                             <label>제목</label>
                             <p style="color:#fc6060;">{{ title }}</p>
-                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}", placeholder="제목 입력" required style="color:black;">
+                            <input type="text" class="form-control mb-30" name="title" id ="title_id" value = "{{ post.title }}", placeholder="제목 입력" maxlenght="15" required style="color:black;">
                         </div>
                         <div class="col-12">
                             <label>내용</label>
@@ -89,7 +89,7 @@
                         </div>
                     </form>
                     {% else %}
-                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data">
+                    <form action="{% url 'posts:update' post.id %}" method="POST"  enctype="multipart/form-data" onsubmit="return verifyStudentId()">
                         {% csrf_token %}
                         <div class="container">
                             <div class="form-group">
@@ -125,7 +125,7 @@
 
                         <div class="col-12">
                             <label>제목</label>
-                            <input type="text" class="form-control mb-30" name="title" value = "{{ post.title }}", placeholder="제목 입력" required style="color:black;">
+                            <input type="text" class="form-control mb-30" name="title" id = "title_id" value = "{{ post.title }}", placeholder="제목 입력" maxlength="15" required style="color:black;">
                         </div>
                         <div class="col-12">
                             <label>내용</label>
