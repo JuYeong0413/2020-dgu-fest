@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 
-<!-- Blog Details Area Start -->
 <div class="alime--blog-area section-padding-80">
     <div class="container">
         <div class="row justify-content-center">
@@ -10,16 +9,13 @@
         </div>
     </div>
 </div>
-<!-- Blog Details Area End -->
 
 
 <div class="comment-area section-padding-80">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9">
-                
-
-                <!-- Leave A Reply -->
+                <!-- Page Title -->
                 <div class="alime-contact-form mt-20">
                     <h4 class="mb-30">사진/영상 업로드</h4>
                 {% if title %}
@@ -77,10 +73,10 @@
                             <div id="content">
                                 {% if "video" in post.mediatype %}
                                     <video class="col-12" controls preload="auto" style="width: 50%" id="show-video-tag">
-                                        <source src="{{post.mediafile.url}}" alt="video">
+                                        <source src="{{ post.mediafile.url }}" alt="video">
                                     </video>
                                 {% elif "image" in post.mediatype %}
-                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="" id="show-image-tag">
+                                    <img src="{{ post.mediafile.url }}" style="width: 50%" alt="image" id="show-image-tag">
                                 {% endif %} 
                             </div>
                         </div>
@@ -144,7 +140,7 @@
                                         <source src="{{post.mediafile.url}}" alt="video">
                                     </video>
                                 {% elif "image" in post.mediatype %}
-                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="" id="show-image-tag">
+                                    <img src="{{post.mediafile.url}}" style="width: 50%" alt="image" id="show-image-tag">
                                 {% endif %} 
                             </div>
                         </div>
@@ -158,6 +154,4 @@
         </div>
     </div>
 </div>
-<!-- Comment Area End -->
 {% endblock %}
-   

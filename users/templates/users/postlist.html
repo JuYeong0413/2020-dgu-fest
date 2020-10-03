@@ -22,7 +22,7 @@
 </section>
 <!-- Breadcrumb Area End -->
 
-<!--contentarea start-->
+<!-- Content Area Start-->
 <div class="alime-portfolio-area section-padding-80 clearfix">
     <div class="container-fluid">
         <div class="contact-area section-padding-50-50">
@@ -35,14 +35,14 @@
                                 <div class="card" style="border:none">
                                     <div class="single-portfolio-content">
                                         {% if "video" in post.mediatype %}
-                                            <div id="video-{{post.id}}" style="display: block !important;">
+                                            <div id="video-{{ post.id }}" style="display: block !important;">
                                                 <video class="col-12" controls preload="metadata" style="padding:0;">
-                                                    <source src="{{post.mediafile.url}}" alt="video">
+                                                    <source src="{{ post.mediafile.url }}" alt="video">
                                                 </video>
                                             </div>
                                             <div class="hover-content">
                                                 <a href="{% url 'posts:show' post.id %}" class="whyrano-video" style="left:30%;">+</a>
-                                                <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{post.id}} style="color:white; left:70%; font-size: 25px;">
+                                                <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{ post.id }} style="color:white; left:70%; font-size: 25px;">
                                                     {% if user in post.like_user_set.all %}
                                                         <i class="fas fa-heart"></i>
                                                     {% else %}
@@ -51,10 +51,10 @@
                                                 </a>
                                             </div>  
                                         {% else %}
-                                            <img src ="{{post.mediafile.url}}" alt="">
+                                            <img src ="{{post.mediafile.url}}" alt="image">
                                             <div class="hover-content">
                                                 <a href="{% url 'posts:show' post.id %}" class="whyrano-video" style="left:30%;">+</a>
-                                                <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{post.id}} style="color:white; left:70%; font-size: 25px;">
+                                                <a href="{% url 'posts:post_like' post.id %}" class="like_toggle" data-post-id={{ post.id }} style="color:white; left:70%; font-size: 25px;">
                                                     {% if user in post.like_user_set.all %}
                                                         <i class="fas fa-heart"></i>
                                                     {% else %}
@@ -67,7 +67,7 @@
                                         <p style="padding-top: 20px; word-break: break-all;">{{ post.title }}</p>
                                         
                                         {% if user == post.user %}
-                                            <span id="count-{{post.id}}">좋아요 {{ post.like_count }}개</span>
+                                            <span id="count-{{ post.id }}">좋아요 {{ post.like_count }}개</span>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                 
                 {% else %}
                 <div class="col-12 text-center">
-                            <h3 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30>로그인 후 이용 가능합니다</h3>
+                            <h3 class="wow fadeInUp" data-wow-delay="100ms" contact-title mb-30>로그인 후 이용이 가능합니다.</h3>
                         </div>
 
                         <div class="col-12 text-center">
@@ -90,6 +90,7 @@
         </div>
     </div>
 </div>
+<!-- Content Area End -->
 
 <script
     src="https://code.jquery.com/jquery-3.4.1.js"
@@ -118,6 +119,4 @@
         });
     });
 </script>
-
 {% endblock %}
-<!--content area end-->
