@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-import json
+from django.http import HttpResponse, HttpResponseBadRequest
+import json, datetime
 from django.core.paginator import Paginator
 from django.db.models import Count
 from django.core.exceptions import ValidationError
@@ -107,17 +107,25 @@ def show(request, id):
 @login_required
 def post_like(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    post_like, post_like_created = post.like_set.get_or_create(user=request.user)
 
-    if not post_like_created:
-        post_like.delete()
-        heart_icon = '<i class="far fa-heart"></i>'
+    now = datetime.datetime.now()
+    voting_end_date = datetime.datetime(2020, 11, 2, 0, 0, 0, 0)
+
+    if now > voting_end_date:
+        # 현재 시간이 투표 마감 시간 이후인 경우
+        return HttpResponseBadRequest('timeout')
     else:
-        heart_icon = '<i class="fas fa-heart"></i>'
+        post_like, post_like_created = post.like_set.get_or_create(user=request.user)
 
-    context = {
-        'heart_icon': heart_icon,
-        'like_count': post.like_count,
-    }
+        if not post_like_created:
+            post_like.delete()
+            heart_icon = '<i class="far fa-heart"></i>'
+        else:
+            heart_icon = '<i class="fas fa-heart"></i>'
 
-    return HttpResponse(json.dumps(context), content_type="application/json")
+        context = {
+            'heart_icon': heart_icon,
+            'like_count': post.like_count,
+        }
+
+        return HttpResponse(json.dumps(context), content_type="application/json")
