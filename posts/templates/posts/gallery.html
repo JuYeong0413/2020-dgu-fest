@@ -41,13 +41,13 @@
                     </div>
                     <div class="alime-contact-form mt-20">
                         <div id="select_box" class="col-12 text-left wow fadeInUp form-group" data-wow-delay="800ms">
-                            <select id="sort-select" onchange="location = this.value;" class="form-control mt-15" style="color:black";>
+                            <select id="sort-select" onchange="location = this.value;" class="form-control mt-15" style="color:black; font-family:'S-CoreDream-3Light';">
                                 {% if "/?sort=random" in request.get_full_path %}
-                                    <option class="sort-new" value="?sort=new" >최신순</option>
-                                    <option class="sort-random" value="?sort=random" selected>랜덤순</option>
+                                    <option class="sort-new" value="?sort=new" style="font-family:'S-CoreDream-3Light';">최신순</option>
+                                    <option class="sort-random" value="?sort=random" selected style="font-family:'S-CoreDream-3Light';">랜덤순</option>
                                 {% else %}
-                                    <option class="sort-new" value="?sort=new" selected>최신순</option>
-                                    <option class="sort-random" value="?sort=random" >랜덤순</option>
+                                    <option class="sort-new" value="?sort=new" selected style="font-family:'S-CoreDream-3Light';">최신순</option>
+                                    <option class="sort-random" value="?sort=random" style="font-family:'S-CoreDream-3Light';" >랜덤순</option>
                                 {% endif %}
                             </select>
                         </div>
