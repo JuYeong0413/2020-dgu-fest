@@ -8,7 +8,8 @@
 - Django 3.0.6  
 
 ## 배포환경  
-
+- Ubuntu Server 18.04 LTS (HVM)  
+- Nginx 1.14.0  
 
 ## 개발자  
 ### 8기  
