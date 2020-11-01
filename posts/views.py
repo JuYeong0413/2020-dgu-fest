@@ -15,8 +15,8 @@ def gallery(request):
     # posts = paginator.get_page(page)
     if sort == 'random':
         posts=Post.objects.all().order_by('?')
-    # if sort == 'likes':
-    #     posts = Post.objects.all().order_by('-like_user_set')
+    if sort == 'likes':
+        posts = Post.objects.all().annotate(likes = Count('like_user_set')).order_by('-likes')
     return render(request, 'posts/gallery.html', {'posts':posts})
 
 @login_required
