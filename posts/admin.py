@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from django.db.models import Count
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -12,8 +13,17 @@ class PostAdmin(admin.ModelAdmin):
         "category",
         "title",
         "mediafile",
-        "number_of_likes",
+        # "number_of_likes",
+        "like_number_count",
     )
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        qs = qs.annotate(like_number_count=Count('like_user_set')).order_by('-like_number_count')
+        return qs
+
+    def like_number_count(self, obj):
+        return obj.like_number_count
 
     def number_of_likes(self, obj):
         return obj.like_count
