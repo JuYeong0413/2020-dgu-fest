@@ -37,6 +37,11 @@ class LikeAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "user",
+        "get_student_id",
         "post",
         "created_at",
     )
+
+    def get_student_id(self, obj):
+      return obj.user.profile.student_id
+    get_student_id.short_description = 'Student Id'
