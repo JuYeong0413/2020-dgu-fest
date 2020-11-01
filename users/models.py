@@ -4,6 +4,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 from .validation import *
 from django import forms
+from posts.models import *
 
 
 class Profile(models.Model):
@@ -12,6 +13,8 @@ class Profile(models.Model):
     student_id = models.PositiveIntegerField(null=True)
     phone_number = models.CharField(max_length=11, unique=True, null=True)
 
+    def has_likes(self):
+        return self.user.like_set.exists()
     
     
 @receiver(post_save, sender=User)
