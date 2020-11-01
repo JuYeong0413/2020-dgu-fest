@@ -31,9 +31,7 @@
                 </div>
             {% endif %}
             <p style="padding-top: 20px; word-break: break-all;">{{ post.title }}</p>
-            {% if user == post.user %}
                 <span id="count-{{ post.id }}" style="font-family: 'S-CoreDream-3Light';">좋아요 {{ post.like_count }}개</span>
-            {% endif %}
         </div>
     </div>
 </div>
