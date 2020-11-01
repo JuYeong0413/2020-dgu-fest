@@ -29,7 +29,7 @@
 
 <div class="ajax-text-and-file">
     {% if "video" in post.mediatype %}
-        <div id="video-{{ post.id }}" style="display: block !important;">
+        <div id="video-{{ post.id }}" style="display: block !important;" class="content file">
             <video class="col-12" controls preload="metadata" style="padding:0;">
                 <source src="{{ post.mediafile.url }}" alt="video">
             </video>
