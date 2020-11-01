@@ -45,9 +45,15 @@
                                 {% if "/?sort=random" in request.get_full_path %}
                                     <option class="sort-new" value="?sort=new" style="font-family:'S-CoreDream-3Light';">최신순</option>
                                     <option class="sort-random" value="?sort=random" selected style="font-family:'S-CoreDream-3Light';">랜덤순</option>
+                                    <option class="sort-likes" value="?sort=likes">좋아요순</option>	
+                                {% elif "/?sort=likes" in request.get_full_path %}	
+                                    <option class="sort-new" value="?sort=new" >최신순</option>	
+                                    <option class="sort-random" value="?sort=random" >랜덤순</option>	
+                                    <option class="sort-likes" value="?sort=likes" selected>좋아요순</option>
                                 {% else %}
                                     <option class="sort-new" value="?sort=new" selected style="font-family:'S-CoreDream-3Light';">최신순</option>
                                     <option class="sort-random" value="?sort=random" style="font-family:'S-CoreDream-3Light';" >랜덤순</option>
+                                     <option class="sort-likes" value="?sort=likes" >좋아요순</option>	
                                 {% endif %}
                             </select>
                         </div>
