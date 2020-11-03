@@ -22,5 +22,5 @@
 [김연진](https://github.com/ygk313), [박현준](https://github.com/c2lv), [양준혁](https://github.com/surfing2003), [연제훈](https://github.com/YJHoon), [이주영](https://github.com/JuYeong0413) 
 
 ## 지원  
-- 동국대학교 융합소프트웨어교육원  
+- 동국대학교 융합교육원  
 - 동국대학교 제52대 총학생회 하이라이트  
